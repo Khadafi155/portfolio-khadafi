@@ -1,9 +1,9 @@
-# ── Secrets (NEVER commit) ─────────────────────────────
+# ── Secrets & env templates (NEVER commit — all kept local-only) ──
 .env
 **/.env
-!**/.env.example
+**/.env.example
 **/.env.local
-!**/.env.local.example
+**/.env.local.example
 
 # ── Python / backend ───────────────────────────────────
 **/.venv/
@@ -23,8 +23,6 @@
 Thumbs.db
 .vercel
 
-# ── Local-only docs / templates (kept on disk, not pushed) ──
+# ── Local-only docs (kept on disk, not pushed) ──
 CLAUDE.md
 DEPLOY.md
-**/.env.example
-**/.env.local.example
