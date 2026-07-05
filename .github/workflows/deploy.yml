@@ -1,0 +1,35 @@
+name: Deploy to VPS
+
+# On every push to main, SSH into the VPS, pull the latest code, and rebuild
+# whichever containers changed (frontend and/or backend). Both run behind the
+# existing Traefik proxy. The VPS .env is gitignored, so secrets survive pulls.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # manual "Run workflow" button in the Actions tab
+
+# Never run two deploys at once (a second push waits for the first to finish).
+concurrency:
+  group: vps-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH to VPS and redeploy
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          command_timeout: "20m" # image builds can take a while
+          script: |
+            set -e
+            cd /docker/portfolio-khadafi
+            git pull origin main
+            docker compose up -d --build
+            docker image prune -f
+            echo "===== Deployed containers ====="
+            docker ps --filter name=kkai- --format '{{.Names}} -> {{.Status}}'
