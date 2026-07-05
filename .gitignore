@@ -22,3 +22,9 @@
 .DS_Store
 Thumbs.db
 .vercel
+
+# ── Local-only docs / templates (kept on disk, not pushed) ──
+CLAUDE.md
+DEPLOY.md
+**/.env.example
+**/.env.local.example
