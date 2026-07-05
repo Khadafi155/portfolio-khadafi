@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+.git
+.gitignore
+npm-debug.log*
+.env*
+.vercel
+.DS_Store
+Thumbs.db
+README.md
