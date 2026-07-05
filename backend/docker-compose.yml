@@ -1,0 +1,41 @@
+# KK.AI backend — Khadafi's RAG chatbot API.
+# Runs alongside the existing n8n + copyengine + Caddy stack on the VPS.
+#
+# The existing Caddy terminates HTTPS for a public subdomain (e.g.
+# api.khadafiai.my.id) and reverse-proxies it to this container. Pick ONE
+# of the two wiring styles below to match how copyengine/n8n are already set up:
+#
+#   A) Caddy runs in a container on a shared Docker network (most common on the
+#      Hostinger n8n template). Join that network and let Caddy proxy to the
+#      service name `kkai-backend:8000`. Uncomment the `networks:` blocks.
+#
+#   B) Caddy runs on the host (or with network_mode: host). Keep the localhost
+#      port publish below and have Caddy proxy to 127.0.0.1:8000.
+#
+# Never publish 8000 on 0.0.0.0 — only Caddy should reach the backend.
+
+services:
+  kkai-backend:
+    build: .
+    image: kkai-backend
+    container_name: kkai-backend
+    restart: unless-stopped
+    env_file: .env
+    # Style B (Caddy on host): expose only on loopback.
+    ports:
+      - "127.0.0.1:8000:8000"
+    # Style A (shared Docker network): comment the `ports` block above,
+    # uncomment the network lines here and the top-level `networks` block.
+    # networks:
+    #   - web
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+# networks:
+#   web:
+#     external: true          # <-- set to the network name Caddy already uses
+#     name: <existing_caddy_network>

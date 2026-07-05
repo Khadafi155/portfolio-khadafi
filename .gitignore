@@ -1,0 +1,24 @@
+# ── Secrets (NEVER commit) ─────────────────────────────
+.env
+**/.env
+!**/.env.example
+**/.env.local
+!**/.env.local.example
+
+# ── Python / backend ───────────────────────────────────
+**/.venv/
+**/__pycache__/
+*.pyc
+**/.pytest_cache/
+
+# ── Node / frontend ────────────────────────────────────
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+*.tsbuildinfo
+
+# ── OS / editor ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vercel

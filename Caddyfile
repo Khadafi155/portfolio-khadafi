@@ -1,0 +1,21 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# KK.AI backend — Caddy block to ADD to the VPS's existing Caddyfile
+# (the one already serving n8n and copyengine). Do NOT replace that file —
+# just append this block, pick the correct upstream, and reload Caddy.
+#
+# Replace api.khadafiai.my.id with the subdomain you point at the VPS IP.
+# Caddy fetches a Let's Encrypt cert automatically on first request.
+# ─────────────────────────────────────────────────────────────────────────────
+
+api.khadafiai.my.id {
+    encode zstd gzip
+
+    # Style A — Caddy container on a shared Docker network (proxy by service name):
+    # reverse_proxy kkai-backend:8000
+
+    # Style B — Caddy on the host (proxy to the loopback-published port):
+    reverse_proxy 127.0.0.1:8000 {
+        # Stream the SSE chat response immediately instead of buffering it.
+        flush_interval -1
+    }
+}

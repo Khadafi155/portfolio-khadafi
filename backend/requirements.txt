@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+sse-starlette
+langchain
+langchain-core
+langchain-openai
+langchain-anthropic
+langchain-postgres
+langchain-community
+pypdf
+psycopg[binary]
+upstash-ratelimit
+pytest
+pytest-asyncio
