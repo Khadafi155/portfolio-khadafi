@@ -363,6 +363,25 @@ export const projects: FeatureProject[] = [
     linkLabel: "dimplebindra.com",
   },
   {
+    name: "AIDA Office",
+    kicker: "Multi-agent virtual office built on Hermes Agent",
+    funded: false,
+    problem:
+      "Running a one-person Upwork business means juggling job hunting, proposals, delivery, finance, and IT - and a pile of AI agents is hard to coordinate and impossible to see at a glance.",
+    approach:
+      "A **virtual office of AI agents**: every staff member (CEO, PM, copywriting, finance, IT, QA, ...) is a **Hermes Agent** profile running 24/7 on **Claude (Opus / Sonnet / Haiku)**, coordinated through a shared **Kanban board** and **Telegram**. A Python **Hermes plugin** streams agent events to a **Bun + Elysia** server, which drives a realtime **3D villa** (**Next.js, React Three Fiber, VRM**) over **WebSocket** - each character walks, works, and joins meetings based on what her agent is actually doing. Includes chat & 1-on-1 meetings with any agent, **faster-whisper** voice notes, and a **Supabase pgvector** knowledge base.",
+    outcome:
+      "An always-on AI team where every agent's work is visible live, with the owner approving anything client-facing.",
+    stack: ["Hermes Agent", "Multi-Agent", "Claude API", "Python", "Bun", "Elysia", "TypeScript", "Next.js", "React", "React Three Fiber", "Three.js", "VRM", "WebSocket", "SQLite", "Supabase", "pgvector", "faster-whisper", "Telegram Bot API", "Notion", "Docker"],
+    metrics: [
+      { n: "30+", l: "Hermes agent profiles" },
+      { n: "24/7", l: "Always-on team" },
+      { n: "3D", l: "Realtime villa" },
+    ],
+    slotId: "proj-aida-office",
+    media: "AIDA Office 3D villa",
+  },
+  {
     name: "Science Hunter Indonesia",
     kicker: "Indonesia's first scientific-education platform",
     funded: false,
