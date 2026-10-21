@@ -313,6 +313,27 @@ export const projects: FeatureProject[] = [
     linkLabel: "Google Drive",
   },
   {
+    name: "WillScale Video Ads",
+    kicker: "AI video ads production system for DTC brands",
+    funded: false,
+    problem:
+      "DTC brands need a steady stream of video ads - producing them by hand for every brand is slow and labor-intensive.",
+    approach:
+      "An **AI-powered video ads production system** built at **WillScale** for 3 DTC brands - **Vera's Copper**, **PawFence**, and **SSV** - using **Claude Code** and **Higgsfield**.",
+    outcome:
+      "Video ads production for 3 DTC brands, automated with AI.",
+    stack: ["AI Automation", "Claude Code", "Higgsfield"],
+    metrics: [
+      { n: "3", l: "DTC brands" },
+      { n: "AI", l: "Video ads production" },
+      { n: "Claude", l: "Code" },
+    ],
+    slotId: "proj-willscale",
+    media: "WillScale video ads production",
+    link: "https://willscale.agency/",
+    linkLabel: "willscale.agency",
+  },
+  {
     name: "Tarkan Salar",
     kicker: "DTC consultancy site + CRM + payments",
     funded: false,
@@ -518,6 +539,18 @@ export const skills: SkillGroupData[] = [
 ];
 
 export const experience: ExperienceItem[] = [
+  {
+    when: "Jul 2026 - Now",
+    role: "AI Automation Engineer",
+    company: "WillScale",
+    loc: "Remote · Jakarta",
+    desc:
+      "WillScale is a video & image ads agency for DTC brands, founded by Willy Tomyko.",
+    bullets: [
+      "Built an AI-powered video ads production system for 3 DTC brands - Vera's Copper (copper jewelry), PawFence (GPS dog fence), and SSV.",
+    ],
+    tags: ["AI Automation", "Claude Code", "Higgsfield", "Video Ads"],
+  },
   {
     when: "Mar 2026 - Now",
     role: "AI & Automation Engineer",
