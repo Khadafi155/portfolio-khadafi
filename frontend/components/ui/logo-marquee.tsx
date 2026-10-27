@@ -8,6 +8,7 @@ const ASSET =
 // All companies / institutions / organisations Khadafi has contributed to,
 // learned at, or created work with — every logo hosted in storage.
 const LOGOS = [
+  { name: "WillScale", src: `${ASSET}/willscale%20logo.webp` },
   { name: "Be Unstoppable 365", src: `${ASSET}/LOGO%20BE365.png` },
   { name: "Dimple Bindra", src: `${ASSET}/LOGO%20DIMPLE%20BINDRA.png` },
   { name: "OpenWay", src: `${ASSET}/LOGO%20OPENWAY.png` },

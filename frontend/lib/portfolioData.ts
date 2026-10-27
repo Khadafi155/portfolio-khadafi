@@ -314,19 +314,19 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "WillScale Video Ads",
-    kicker: "AI video ads production system for DTC brands",
+    kicker: "AI video ads automation for global DTC brands",
     funded: false,
     problem:
-      "DTC brands need a steady stream of video ads - producing them by hand for every brand is slow and labor-intensive.",
+      "Global DTC brands need 100+ fresh video ads every week across several styles - producing them by hand is slow, costly, and hard to keep on-brand.",
     approach:
-      "An **AI-powered video ads production system** built at **WillScale** for 3 DTC brands - **Vera's Copper**, **PawFence**, and **SSV** - using **Claude Code** and **Higgsfield**.",
+      "An **AI video ads automation system** built at **WillScale** for **Vera's Copper**, **Shiny Smile Veneers**, and **PawFence** - **Claude LLMs + MCP** orchestrate **Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI** and lip-sync tools to mass-produce videos, images, and voiceovers in 3 styles: **Movie Cinematic**, **3D Pixar Animation**, and **UGC Talking Head**.",
     outcome:
-      "Video ads production for 3 DTC brands, automated with AI.",
-    stack: ["AI Automation", "Claude Code", "Higgsfield"],
+      "100+ finished short-form video ads that pass agency QA and ship to clients every week.",
+    stack: ["Claude", "MCP", "Higgsfield", "HeyGen", "ElevenLabs", "Freepik AI", "Notion"],
     metrics: [
-      { n: "3", l: "DTC brands" },
-      { n: "AI", l: "Video ads production" },
-      { n: "Claude", l: "Code" },
+      { n: "100+", l: "Video ads / week" },
+      { n: "3", l: "Global brands" },
+      { n: "3", l: "Ad styles" },
     ],
     slotId: "proj-willscale",
     media: "WillScale video ads production",
@@ -552,7 +552,7 @@ export const skills: SkillGroupData[] = [
       "CRM (GoHighLevel)", "WordPress", "Jira",
       "Trello", "Slack", "Product Knowledge", "Product Development", "Crunchbase",
       "StoreLeads", "Clay", "HeyReach", "Sandcastles", "Remotion", "OpusClip",
-      "Higgsfield", "Omnisocials",
+      "Higgsfield", "Omnisocials", "HeyGen", "ElevenLabs", "Magnific", "Freepik AI",
     ],
   },
 ];
@@ -571,7 +571,7 @@ export const experience: ExperienceItem[] = [
       "Turn 100+ ad scripts into finished short-form video ads that pass agency QA and ship to clients every week - writing and refining prompts for consistent, on-brand visuals, and using Claude and other LLMs to speed up scripting, asset sourcing, and batch production.",
       "Scout and test new generative AI tools, then give a clear verdict: adopt or drop.",
     ],
-    tags: ["AI Automation", "Claude Code", "Higgsfield", "Video Ads"],
+    tags: ["AI Automation", "Claude", "MCP", "Higgsfield", "Video Ads"],
   },
   {
     when: "Mar 2026 - Now",
