@@ -328,7 +328,7 @@ export const projects: FeatureProject[] = [
       "An **AI video ads automation system** built at **WillScale** for **Vera's Copper**, **Shiny Smile Veneers**, and **PawFence** - **Claude LLMs + MCP** orchestrate **Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI** and lip-sync tools to mass-produce videos, images, and voiceovers in 3 styles: **Movie Cinematic**, **3D Pixar Animation**, and **UGC Talking Head**.",
     outcome:
       "100+ finished short-form video ads that pass agency QA and ship to clients every week.",
-    stack: ["Claude", "MCP", "Higgsfield", "HeyGen", "ByteDance", "ElevenLabs", "Freepik AI", "GitHub", "Notion"],
+    stack: ["Claude", "MCP", "Higgsfield", "HeyGen", "ByteDance", "ElevenLabs", "Suno Music AI", "Freepik AI", "GitHub", "Notion"],
     metrics: [
       { n: "100+", l: "Video ads / week" },
       { n: "3", l: "Global brands" },
@@ -574,7 +574,7 @@ export const skills: SkillGroupData[] = [
       "CRM (GoHighLevel)", "WordPress", "Jira",
       "Trello", "Slack", "Product Knowledge", "Product Development", "Crunchbase",
       "StoreLeads", "Clay", "HeyReach", "Sandcastles", "Remotion", "OpusClip",
-      "Higgsfield", "Omnisocials", "HeyGen", "ElevenLabs", "Magnific", "Freepik AI", "ByteDance",
+      "Higgsfield", "Omnisocials", "HeyGen", "ElevenLabs", "Magnific", "Freepik AI", "ByteDance", "Suno Music AI",
     ],
   },
 ];

@@ -147,6 +147,7 @@ const PACKAGE = lucide('<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2
 // Soft-skill glyphs (lucide).
 const SIGMA = lucide('<path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/>');
 const PUZZLE = lucide('<path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/>');
+const MUSIC = lucide('<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>');
 const MIC = lucide('<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>');
 const CLOCK = lucide('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>');
 const KANBAN = lucide('<path d="M6 5v11"/><path d="M12 5v6"/><path d="M18 5v14"/>');
@@ -187,6 +188,7 @@ const CUSTOM: Record<string, string> = {
   Omnisocials: MEGAPHONE,
   HeyGen: FILM,
   ElevenLabs: MIC,
+  "Suno Music AI": MUSIC,
   Magnific: IMAGE,
   "Freepik AI": IMAGE,
   ByteDance: FILM,
