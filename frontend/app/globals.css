@@ -684,6 +684,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 }
 .shot-tabs button:hover { color: var(--accent); border-color: var(--accent-20); }
 .shot-tabs button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+/* second-level tabs (styles inside one brand): outlined instead of filled */
+.shot-tabs.sub button { font-size: 10.5px; padding: 4px 10px; }
+.shot-tabs.sub button.active { color: var(--accent); background: var(--accent-12); border-color: var(--accent-20); }
 /* one solid tosca circle (CTA colour) BEHIND the phone — the phone pokes out
    top & bottom and the circle peeks at the sides (like the reference).
    Lives on .phone-wrap so it sits truly behind the frame's dark bezel. */

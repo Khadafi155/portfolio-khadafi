@@ -56,9 +56,8 @@ export interface FeatureProject {
   desktopLabels?: string[];
   /** Several CTA buttons (replaces `link` when set). */
   links?: { href: string; label: string }[];
-  /** Several phone demo videos, picked with named tabs (`videoLabels`). */
-  videos?: string[];
-  videoLabels?: string[];
+  /** Phone demo videos grouped per brand (brand tabs, then style tabs). */
+  videoGroups?: { label: string; videos: { label: string; src: string }[] }[];
   /** Multiple mobile screenshots — gallery inside the phone frame. */
   mobileImages?: string[];
   /** Poster image for the video / screen. */
@@ -341,14 +340,15 @@ export const projects: FeatureProject[] = [
     // local webp copies of the bucket PNGs (bucket has no .webp twins for these, so webp() would 404)
     desktopImages: ["/willscale/workflow-desktop.webp", "/willscale/copper-desktop.webp", "/willscale/pawfence-desktop.webp", "/willscale/ssv-desktop.webp"],
     desktopLabels: ["Global Workflow", "Vera's Copper", "PawFence", "SSV"],
-    videos: [
-      `${ASSET}/Copper%20Movie%20Cinematic%20Style.mp4.mp4`,
-      `${ASSET}/Copper%203D%20Animation%20Style.mp4`,
-      `${ASSET}/Copper%20UGC%20Talking%20Head%20Style.mp4`,
-      `${ASSET}/Pawfence%20Demo.mp4`,
-      `${ASSET}/SSV%20Demo.mp4`,
+    videoGroups: [
+      { label: "Vera's Copper", videos: [
+        { label: "Movie Cinematic", src: `${ASSET}/Copper%20Movie%20Cinematic%20Style.mp4.mp4` },
+        { label: "3D Pixar", src: `${ASSET}/Copper%203D%20Animation%20Style.mp4` },
+        { label: "UGC Talking Head", src: `${ASSET}/Copper%20UGC%20Talking%20Head%20Style.mp4` },
+      ] },
+      { label: "PawFence", videos: [{ label: "Demo", src: `${ASSET}/Pawfence%20Demo.mp4` }] },
+      { label: "Shiny Smile Veneers", videos: [{ label: "Demo", src: `${ASSET}/SSV%20Demo.mp4` }] },
     ],
-    videoLabels: ["Cinematic", "3D Pixar", "UGC Talking Head", "PawFence", "SSV"],
     links: [
       { href: "https://veralouisiana.com/", label: "Vera's Copper" },
       { href: "https://www.shoppawfence.com/", label: "PawFence" },
