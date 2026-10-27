@@ -17,7 +17,7 @@ import {
   ImageSlot,
   TagIcon,
 } from "@/app/components/portfolio/primitives";
-import { Bot, Briefcase, FolderGit2, Mic, Smile, Users, BookOpen, Play, Pause, RotateCcw, ExternalLink, Monitor, Smartphone, ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
+import { Bot, Briefcase, FolderGit2, Mic, Smile, Users, BookOpen, Play, Pause, RotateCcw, ExternalLink, Monitor, Smartphone, ChevronLeft, ChevronRight, Volume2, VolumeX, Workflow, Gem, Dog, Clapperboard, Box } from "lucide-react";
 import { AwardsBlock } from "@/app/components/portfolio/extras";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { SiteFooter, WhatsAppIcon } from "@/components/ui/site-footer";
@@ -349,6 +349,17 @@ function BrowserShell({ children, controls, url }: { children: React.ReactNode; 
 /** Project demo video with a seek bar below the mockup, rendered inside either a
  *  phone or a browser window. Plays once; when it ends the play/pause button
  *  becomes a restart button. */
+/** Icon per gallery / video tab label (labels without one render text only). */
+const TAB_ICON: Record<string, React.ComponentType<{ size?: number }>> = {
+  "Global Workflow": Workflow, "Vera's Copper": Gem, PawFence: Dog, SSV: Smile, "Shiny Smile Veneers": Smile,
+  "Movie Cinematic": Clapperboard, "3D Pixar": Box, "UGC Talking Head": Mic, Demo: Play,
+};
+function TabLabel({ text }: { text?: string }) {
+  if (!text) return null;
+  const I = TAB_ICON[text];
+  return <>{I ? <I size={12} /> : null}{text}</>;
+}
+
 /** Sound choice shared by all demo videos: muting one keeps the next ones muted too. */
 const soundPref = { muted: false };
 
@@ -531,7 +542,7 @@ function ShotGallery({
                 aria-label={labels?.[k] ?? `${label} ${k + 1}`}
                 aria-current={k === i}
               >
-                {labels?.[k]}
+                <TabLabel text={labels?.[k]} />
               </button>
             ))}
           </div>
@@ -592,7 +603,7 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
             <div className="shot-tabs sub" aria-label={`${f.videoGroups[gi].label} styles`}>
               {f.videoGroups[gi].videos.map((v, k) => (
                 <button key={v.src} type="button" className={k === vi ? "active" : ""} onClick={() => setVi(k)} aria-current={k === vi}>
-                  {v.label}
+                  <TabLabel text={v.label} />
                 </button>
               ))}
             </div>
@@ -600,7 +611,7 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
           <div className="shot-tabs" aria-label={`${f.name} brands`}>
             {f.videoGroups.map((g, k) => (
               <button key={g.label} type="button" className={k === gi ? "active" : ""} onClick={() => { setGi(k); setVi(0); }} aria-current={k === gi}>
-                {g.label}
+                <TabLabel text={g.label} />
               </button>
             ))}
           </div>
