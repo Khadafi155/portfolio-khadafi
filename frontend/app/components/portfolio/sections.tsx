@@ -528,7 +528,8 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
   const desktopShots = f.desktopImages ?? (f.desktopImage ? [f.desktopImage] : []);
   const mobileShots = f.mobileImages ?? (!f.frame && f.image && !f.video ? [f.image] : []);
   // Dual = a desktop screenshot plus a phone media (video demo OR mobile shot).
-  const dual = desktopShots.length > 0 && (mobileShots.length > 0 || !!f.video);
+  const dual = desktopShots.length > 0 && (mobileShots.length > 0 || !!f.video || !!f.videos?.length);
+  const [vi, setVi] = React.useState(0);
   const [mode, setMode] = React.useState<"desktop" | "phone">("phone");
   const isDesktop = dual ? mode === "desktop" : (desktopShots.length > 0 || f.frame === "desktop");
 
@@ -546,6 +547,18 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
             </div>
           )}
         />
+      ) : f.videos?.length ? (
+        // several phone demos (e.g. one per ad style): one video loaded at a time, named tabs below
+        <div className="shot-gallery">
+          <DemoMedia src={f.videos[vi]} variant="phone" url={f.mediaUrl} key={f.videos[vi]} />
+          <div className="shot-tabs" aria-label={`${f.name} videos`}>
+            {f.videos.map((v, k) => (
+              <button key={v} type="button" className={k === vi ? "active" : ""} onClick={() => setVi(k)} aria-current={k === vi}>
+                {f.videoLabels?.[k] ?? `Video ${k + 1}`}
+              </button>
+            ))}
+          </div>
+        </div>
       ) : f.video ? (
         <DemoMedia src={f.video} poster={f.poster} variant="phone" url={f.mediaUrl} key={f.video} />
       ) : (

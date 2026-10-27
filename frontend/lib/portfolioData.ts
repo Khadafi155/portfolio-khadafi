@@ -54,6 +54,9 @@ export interface FeatureProject {
   desktopImages?: string[];
   /** Tab name per desktop screenshot (replaces the gallery dots). */
   desktopLabels?: string[];
+  /** Several phone demo videos, picked with named tabs (`videoLabels`). */
+  videos?: string[];
+  videoLabels?: string[];
   /** Multiple mobile screenshots — gallery inside the phone frame. */
   mobileImages?: string[];
   /** Poster image for the video / screen. */
@@ -336,6 +339,14 @@ export const projects: FeatureProject[] = [
     // local webp copies of the bucket PNGs (bucket has no .webp twins for these, so webp() would 404)
     desktopImages: ["/willscale/workflow-desktop.webp", "/willscale/copper-desktop.webp", "/willscale/pawfence-desktop.webp", "/willscale/ssv-desktop.webp"],
     desktopLabels: ["Global Workflow", "Vera's Copper", "PawFence", "SSV"],
+    videos: [
+      `${ASSET}/Copper%20Movie%20Cinematic%20Style.mp4.mp4`,
+      `${ASSET}/Copper%203D%20Animation%20Style.mp4`,
+      `${ASSET}/Copper%20UGC%20Talking%20Head%20Style.mp4`,
+      `${ASSET}/Pawfence%20Demo.mp4`,
+      `${ASSET}/SSV%20Demo.mp4`,
+    ],
+    videoLabels: ["Cinematic", "3D Pixar", "UGC Talking Head", "PawFence", "SSV"],
     link: "https://willscale.agency/",
     linkLabel: "willscale.agency",
   },
