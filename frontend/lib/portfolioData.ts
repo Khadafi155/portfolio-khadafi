@@ -568,8 +568,7 @@ export const experience: ExperienceItem[] = [
     logo: `${ASSET}/willscale%20logo.webp`,
     bullets: [
       "Built and maintain an AI video ads automation system that mass-produces 100+ video ads, images, and voiceovers for 3 global brands (Vera's Copper, Shiny Smile Veneers, and PawFence) - powered by Claude LLMs and MCP, integrated with Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, lip-sync tools, GitHub, and Notion.",
-      "Turn 100+ ad scripts into finished short-form video ads that pass agency QA and ship to clients every week.",
-      "Write and refine prompts for consistent, on-brand visual output, using Claude and other LLMs to speed up scripting, asset sourcing, and batch production.",
+      "Turn 100+ ad scripts into finished short-form video ads that pass agency QA and ship to clients every week - writing and refining prompts for consistent, on-brand visuals, and using Claude and other LLMs to speed up scripting, asset sourcing, and batch production.",
       "Scout and test new generative AI tools, then give a clear verdict: adopt or drop.",
     ],
     tags: ["AI Automation", "Claude Code", "Higgsfield", "Video Ads"],
