@@ -315,9 +315,10 @@ function PhoneShell({ children, controls, overlay }: { children: React.ReactNode
         <span className="phone-btn pb-voldn" aria-hidden="true" />
         <span className="phone-btn pb-power" aria-hidden="true" />
         <span className="phone-island" aria-hidden="true" />
-        <div className="phone-screen">{children}{overlay}</div>
+        <div className="phone-screen">{children}</div>
       </div>
       {controls}
+      {overlay}
     </div>
   );
 }
@@ -469,7 +470,8 @@ function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster
       playsInline
       preload="metadata"
       onVolumeChange={() => setMuted(!!ref.current?.muted)}
-      onPlay={() => { setPlaying(true); setEnded(false); }}
+      // sync from the element: unmuted autoplay fires no volumechange, so state stayed "muted" and the badge never hid
+      onPlay={() => { setPlaying(true); setEnded(false); setMuted(!!ref.current?.muted); }}
       onPause={() => setPlaying(false)}
       onEnded={() => setEnded(true)}
       onTimeUpdate={onTime}
@@ -481,7 +483,7 @@ function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster
     <>
       {video}
       {muted && !soundPref.muted ? (
-        <button type="button" className="sound-badge" onClick={() => { const v = ref.current; if (v) v.muted = false; }}>
+        <button type="button" className="sound-badge" onClick={() => { const v = ref.current; if (!v) return; soundPref.muted = false; v.muted = false; setMuted(false); void v.play().catch(() => {}); }}>
           <VolumeX size={12} /> Tap for sound
         </button>
       ) : null}
@@ -623,7 +625,7 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
             url={f.mediaUrl}
             key={f.videoGroups[gi].videos[vi].src}
             overlay={f.videoGroups[gi].videos.length > 1 ? (
-              <div className="shot-tabs sub phone-overlay" aria-label={`${f.videoGroups[gi].label} styles`}>
+              <div className="shot-tabs sub" aria-label={`${f.videoGroups[gi].label} styles`}>
                 {f.videoGroups[gi].videos.map((v, k) => (
                   <button key={v.src} type="button" className={k === vi ? "active" : ""} onClick={() => setVi(k)} aria-current={k === vi}>
                     <TabLabel text={v.label} />
