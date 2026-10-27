@@ -389,13 +389,21 @@ function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster
       if (visible) start(); else v.pause();
     }, { threshold: 0.5 });
     io.observe(v);
-    const onGesture = () => { if (visible && v.muted && !soundPref.muted) v.muted = false; };
-    document.addEventListener("pointerdown", onGesture);
-    document.addEventListener("keydown", onGesture);
+    // A touch pointerdown is NOT a user activation (only mouse pointerdown is), so on phones the unmute
+    // ran without permission and the browser paused it / kept it silent. Listen to every activation event;
+    // if unmuted playback is still refused, fall back to muted so the video keeps playing.
+    const onGesture = (e: Event) => {
+      // The controls' own mute button decides there; unmuting here first would let toggleMute flip it back.
+      if ((e.target as Element | null)?.closest?.(".phone-ctrl")) return;
+      if (!visible || !v.muted || soundPref.muted) return;
+      v.muted = false;
+      v.play().catch(() => { v.muted = true; void v.play().catch(() => {}); });
+    };
+    const events = ["pointerdown", "pointerup", "touchend", "click", "keydown"] as const;
+    events.forEach((t) => document.addEventListener(t, onGesture, true));
     return () => {
       io.disconnect();
-      document.removeEventListener("pointerdown", onGesture);
-      document.removeEventListener("keydown", onGesture);
+      events.forEach((t) => document.removeEventListener(t, onGesture, true));
     };
   }, [src]);
   const [progress, setProgress] = React.useState(0); // 0..1
@@ -468,10 +476,21 @@ function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster
       onLoadedMetadata={onTime}
     />
   );
+  // Badge only while the browser's autoplay rule keeps it muted, not when the user chose mute.
+  const screen = (
+    <>
+      {video}
+      {muted && !soundPref.muted ? (
+        <button type="button" className="sound-badge" onClick={() => { const v = ref.current; if (v) v.muted = false; }}>
+          <VolumeX size={12} /> Tap for sound
+        </button>
+      ) : null}
+    </>
+  );
   return variant === "browser" ? (
-    <BrowserShell controls={controls} url={url}>{video}</BrowserShell>
+    <BrowserShell controls={controls} url={url}>{screen}</BrowserShell>
   ) : (
-    <PhoneShell controls={controls} overlay={overlay}>{video}</PhoneShell>
+    <PhoneShell controls={controls} overlay={overlay}>{screen}</PhoneShell>
   );
 }
 
