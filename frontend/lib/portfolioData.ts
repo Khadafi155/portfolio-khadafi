@@ -564,7 +564,7 @@ export const experience: ExperienceItem[] = [
     company: "WillScale",
     loc: "Remote · Jakarta",
     desc:
-      "WillScale is a video & image ads agency for DTC brands, founded by Willy Tomyko.",
+      "WillScale is an AI video & image ads agency for global DTC brands (Vera's Copper, PawFence, Shiny Smile Veneers, and more).",
     logo: `${ASSET}/willscale%20logo.webp`,
     bullets: [
       "Built and maintain an AI video ads automation system that mass-produces 100+ video ads, images, and voiceovers for 3 global brands (Vera's Copper, Shiny Smile Veneers, and PawFence) - powered by Claude LLMs and MCP, integrated with Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, lip-sync tools, GitHub, and Notion.",
