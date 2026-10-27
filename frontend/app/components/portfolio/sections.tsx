@@ -617,14 +617,6 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
       ) : f.videoGroups?.length ? (
         // phone demos grouped per brand: brand tabs, then style tabs when a brand has several videos
         <div className="shot-gallery">
-          {/* Tuan 27 Okt: brand tabs sit right under the Mobile/Desktop toggle; style tabs overlay inside the phone screen */}
-          <div className="shot-tabs" aria-label={`${f.name} brands`}>
-            {f.videoGroups.map((g, k) => (
-              <button key={g.label} type="button" className={k === gi ? "active" : ""} onClick={() => { setGi(k); setVi(0); }} aria-current={k === gi}>
-                <TabLabel text={g.label} />
-              </button>
-            ))}
-          </div>
           <DemoMedia
             src={f.videoGroups[gi].videos[vi].src}
             variant="phone"
@@ -700,9 +692,20 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
     );
   }
 
+  // Tuan 27 Okt: brand tabs stacked right under the Mobile/Desktop toggle (phone mode only)
+  const brands = dual && mode === "phone" && f.videoGroups?.length ? (
+    <div className="shot-tabs" aria-label={`${f.name} brands`}>
+      {f.videoGroups.map((g, k) => (
+        <button key={g.label} type="button" className={k === gi ? "active" : ""} onClick={() => { setGi(k); setVi(0); }} aria-current={k === gi}>
+          <TabLabel text={g.label} />
+        </button>
+      ))}
+    </div>
+  ) : null;
   return (
-    <div className={`proj-feature-media${isDesktop ? " is-desktop" : ""}`}>
+    <div className={`proj-feature-media${isDesktop ? " is-desktop" : ""}${brands ? " has-brands" : ""}`}>
       {dual ? (
+        <div className="media-head">
         <div className="media-toggle" role="tablist" aria-label="View mode">
           <button
             type="button"
@@ -722,6 +725,8 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
           >
             <Monitor size={13} /> Desktop
           </button>
+        </div>
+        {brands}
         </div>
       ) : null}
       {inner}

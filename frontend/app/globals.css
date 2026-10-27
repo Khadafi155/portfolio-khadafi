@@ -633,6 +633,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 /* Desktop / Phone view switcher (projects with both a video + desktop shot).
    Push the mockup down so the floating pill never covers the screen top. */
 .proj-feature-media:has(.media-toggle) { padding-top: 60px; padding-bottom: 20px; }
+/* toggle + brand tabs stacked at the top of the media column */
+.media-head { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 4;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; width: max-content; max-width: calc(100% - 24px); }
+.media-head .media-toggle { position: static; transform: none; }
+.proj-feature-media.has-brands { padding-top: 104px; }
 .media-toggle {
   position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
   z-index: 4; display: inline-flex; gap: 3px; padding: 3px;
@@ -1919,6 +1924,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
   /* stacked on mobile the toggle pill + mockup felt cramped top & bottom —
      give the phone real breathing room around the floating toggle */
   .proj-feature-media:has(.media-toggle) { padding-top: 78px; padding-bottom: 44px; }
+  .proj-feature-media.has-brands { padding-top: 140px; }
   .proj-grid { grid-template-columns: 1fr 1fr; }
   .skill-groups { grid-template-columns: 1fr; }
   .contact-split { transform: none; }
