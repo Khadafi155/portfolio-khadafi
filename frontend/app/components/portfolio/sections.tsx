@@ -364,7 +364,7 @@ function TabLabel({ text }: { text?: string }) {
 /** Sound choice shared by all demo videos: muting one keeps the next ones muted too. */
 const soundPref = { muted: false };
 
-function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster?: string; variant: "phone" | "browser"; url?: string; overlay?: React.ReactNode }) {
+function DemoMedia({ src, poster, variant, url, overlay, soundBadge }: { src: string; poster?: string; variant: "phone" | "browser"; url?: string; overlay?: React.ReactNode; soundBadge?: boolean }) {
   const ref = React.useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = React.useState(false);
   const [ended, setEnded] = React.useState(false);
@@ -482,7 +482,8 @@ function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster
   const screen = (
     <>
       {video}
-      {muted && !soundPref.muted ? (
+      {/* Tuan 27 Okt: only the WillScale ads get the badge (soundBadge), other demos stay clean */}
+      {soundBadge && muted && !soundPref.muted ? (
         <button type="button" className="sound-badge" onClick={() => { const v = ref.current; if (!v) return; soundPref.muted = false; v.muted = false; setMuted(false); void v.play().catch(() => {}); }}>
           <VolumeX size={12} /> Tap for sound
         </button>
@@ -624,6 +625,7 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
             variant="phone"
             url={f.mediaUrl}
             key={f.videoGroups[gi].videos[vi].src}
+            soundBadge
             overlay={f.videoGroups[gi].videos.length > 1 ? (
               <div className="shot-tabs sub" aria-label={`${f.videoGroups[gi].label} styles`}>
                 {f.videoGroups[gi].videos.map((v, k) => (
