@@ -672,6 +672,16 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 }
 .shot-dots button:hover { background: var(--accent-40, rgba(21,200,182,0.5)); }
 .shot-dots button.active { background: var(--accent); width: 20px; }
+/* named tabs (e.g. behind-the-scenes per brand) */
+.shot-tabs { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.shot-tabs button {
+  padding: 5px 11px; border-radius: 999px; cursor: pointer; white-space: nowrap;
+  font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim);
+  background: rgba(18,20,20,0.6); border: 1px solid rgba(255,255,255,0.14);
+  transition: color .2s, border-color .2s, background .2s;
+}
+.shot-tabs button:hover { color: var(--accent); border-color: var(--accent-20); }
+.shot-tabs button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
 /* one solid tosca circle (CTA colour) BEHIND the phone — the phone pokes out
    top & bottom and the circle peeks at the sides (like the reference).
    Lives on .phone-wrap so it sits truly behind the frame's dark bezel. */

@@ -455,10 +455,13 @@ function ShotGallery({
   images,
   render,
   label,
+  labels,
 }: {
   images: string[];
   render: (src: string) => React.ReactNode;
   label: string;
+  /** Optional name per image: shown as clickable tabs instead of dots. */
+  labels?: string[];
 }) {
   const [i, setI] = React.useState(0);
   const [paused, setPaused] = React.useState(false);
@@ -482,16 +485,18 @@ function ShotGallery({
           <button type="button" onClick={() => go(-1)} aria-label="Previous">
             <ChevronLeft size={16} />
           </button>
-          <div className="shot-dots">
+          <div className={labels ? "shot-tabs" : "shot-dots"}>
             {images.map((_, k) => (
               <button
                 key={k}
                 type="button"
                 className={k === i ? "active" : ""}
                 onClick={() => setI(k)}
-                aria-label={`${label} ${k + 1}`}
+                aria-label={labels?.[k] ?? `${label} ${k + 1}`}
                 aria-current={k === i}
-              />
+              >
+                {labels?.[k]}
+              </button>
             ))}
           </div>
           <button type="button" onClick={() => go(1)} aria-label="Next">
@@ -533,6 +538,7 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
       mode === "desktop" ? (
         <ShotGallery
           images={desktopShots}
+          labels={f.desktopLabels}
           label={`${f.name} desktop`}
           render={(src) => (
             <div className="macbook-svg-wrap">
@@ -558,6 +564,7 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
     inner = (
       <ShotGallery
         images={desktopShots}
+        labels={f.desktopLabels}
         label={`${f.name} desktop`}
         render={(src) => (
           <div className="macbook-svg-wrap">

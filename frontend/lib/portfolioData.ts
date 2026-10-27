@@ -52,6 +52,8 @@ export interface FeatureProject {
   /** Multiple desktop screenshots — renders a gallery (prev/next + autoplay)
    *  inside the MacBook. Takes precedence over `desktopImage`. */
   desktopImages?: string[];
+  /** Tab name per desktop screenshot (replaces the gallery dots). */
+  desktopLabels?: string[];
   /** Multiple mobile screenshots — gallery inside the phone frame. */
   mobileImages?: string[];
   /** Poster image for the video / screen. */
@@ -333,6 +335,7 @@ export const projects: FeatureProject[] = [
     mediaUrl: "willscale-ad-pipelines",
     // local webp copies of the bucket PNGs (bucket has no .webp twins for these, so webp() would 404)
     desktopImages: ["/willscale/workflow-desktop.webp", "/willscale/copper-desktop.webp", "/willscale/pawfence-desktop.webp", "/willscale/ssv-desktop.webp"],
+    desktopLabels: ["Global Workflow", "Vera's Copper", "PawFence", "SSV"],
     link: "https://willscale.agency/",
     linkLabel: "willscale.agency",
   },
