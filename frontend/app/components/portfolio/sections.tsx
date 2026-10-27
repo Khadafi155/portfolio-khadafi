@@ -17,7 +17,7 @@ import {
   ImageSlot,
   TagIcon,
 } from "@/app/components/portfolio/primitives";
-import { Bot, Briefcase, FolderGit2, Mic, Smile, Users, BookOpen, Play, Pause, RotateCcw, ExternalLink, Monitor, Smartphone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Bot, Briefcase, FolderGit2, Mic, Smile, Users, BookOpen, Play, Pause, RotateCcw, ExternalLink, Monitor, Smartphone, ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
 import { AwardsBlock } from "@/app/components/portfolio/extras";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { SiteFooter, WhatsAppIcon } from "@/components/ui/site-footer";
@@ -353,6 +353,14 @@ function DemoMedia({ src, poster, variant, url }: { src: string; poster?: string
   const ref = React.useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = React.useState(true);
   const [ended, setEnded] = React.useState(false);
+  // Autoplay must start muted (browser policy); the user unmutes with the button.
+  const [muted, setMuted] = React.useState(true);
+  const toggleMute = () => {
+    const v = ref.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+  };
   const [progress, setProgress] = React.useState(0); // 0..1
   const [time, setTime] = React.useState({ cur: 0, dur: 0 });
   const fmt = (s: number) =>
@@ -402,6 +410,9 @@ function DemoMedia({ src, poster, variant, url }: { src: string; poster?: string
         style={{ ["--p" as string]: `${progress * 100}%` }}
       />
       <span className="phone-time">{fmt(time.cur)} / {fmt(time.dur)}</span>
+      <button type="button" onClick={toggleMute} aria-label={muted ? "Unmute" : "Mute"}>
+        {muted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+      </button>
     </div>
   );
   const video = (
