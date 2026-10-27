@@ -342,8 +342,8 @@ export const projects: FeatureProject[] = [
     desktopLabels: ["Global Workflow", "Vera's Copper", "PawFence", "SSV"],
     videoGroups: [
       { label: "Vera's Copper", videos: [
-        { label: "Movie Cinematic", src: `${ASSET}/Copper%20Movie%20Cinematic%20Style.mp4.mp4` },
         { label: "3D Pixar", src: `${ASSET}/Copper%203D%20Animation%20Style.mp4` },
+        { label: "Movie Cinematic", src: `${ASSET}/Copper%20Movie%20Cinematic%20Style.mp4.mp4` },
         { label: "UGC Talking Head", src: `${ASSET}/Copper%20UGC%20Talking%20Head%20Style.mp4` },
       ] },
       { label: "PawFence", videos: [{ label: "Demo", src: `${ASSET}/Pawfence%20Demo.mp4` }] },

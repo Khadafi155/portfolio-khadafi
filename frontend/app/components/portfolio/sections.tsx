@@ -306,7 +306,7 @@ export function WorkingExperience() {
 
 /** The iPhone shell: bezel, side buttons, dynamic island + screen.
  *  `controls` (optional) render below the phone. */
-function PhoneShell({ children, controls }: { children: React.ReactNode; controls?: React.ReactNode }) {
+function PhoneShell({ children, controls, overlay }: { children: React.ReactNode; controls?: React.ReactNode; overlay?: React.ReactNode }) {
   return (
     <div className="phone-wrap">
       <div className="phone-frame">
@@ -315,7 +315,7 @@ function PhoneShell({ children, controls }: { children: React.ReactNode; control
         <span className="phone-btn pb-voldn" aria-hidden="true" />
         <span className="phone-btn pb-power" aria-hidden="true" />
         <span className="phone-island" aria-hidden="true" />
-        <div className="phone-screen">{children}</div>
+        <div className="phone-screen">{children}{overlay}</div>
       </div>
       {controls}
     </div>
@@ -352,7 +352,7 @@ function BrowserShell({ children, controls, url }: { children: React.ReactNode; 
 /** Sound choice shared by all demo videos: muting one keeps the next ones muted too. */
 const soundPref = { muted: false };
 
-function DemoMedia({ src, poster, variant, url }: { src: string; poster?: string; variant: "phone" | "browser"; url?: string }) {
+function DemoMedia({ src, poster, variant, url, overlay }: { src: string; poster?: string; variant: "phone" | "browser"; url?: string; overlay?: React.ReactNode }) {
   const ref = React.useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = React.useState(false);
   const [ended, setEnded] = React.useState(false);
@@ -460,7 +460,7 @@ function DemoMedia({ src, poster, variant, url }: { src: string; poster?: string
   return variant === "browser" ? (
     <BrowserShell controls={controls} url={url}>{video}</BrowserShell>
   ) : (
-    <PhoneShell controls={controls}>{video}</PhoneShell>
+    <PhoneShell controls={controls} overlay={overlay}>{video}</PhoneShell>
   );
 }
 
@@ -587,16 +587,22 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
       ) : f.videoGroups?.length ? (
         // phone demos grouped per brand: brand tabs, then style tabs when a brand has several videos
         <div className="shot-gallery">
-          <DemoMedia src={f.videoGroups[gi].videos[vi].src} variant="phone" url={f.mediaUrl} key={f.videoGroups[gi].videos[vi].src} />
-          {f.videoGroups[gi].videos.length > 1 ? (
-            <div className="shot-tabs sub" aria-label={`${f.videoGroups[gi].label} styles`}>
-              {f.videoGroups[gi].videos.map((v, k) => (
-                <button key={v.src} type="button" className={k === vi ? "active" : ""} onClick={() => setVi(k)} aria-current={k === vi}>
-                  {v.label}
-                </button>
-              ))}
-            </div>
-          ) : null}
+          {/* Tuan 27 Okt: style tabs overlay inside the phone screen; brand tabs stay below the player */}
+          <DemoMedia
+            src={f.videoGroups[gi].videos[vi].src}
+            variant="phone"
+            url={f.mediaUrl}
+            key={f.videoGroups[gi].videos[vi].src}
+            overlay={f.videoGroups[gi].videos.length > 1 ? (
+              <div className="shot-tabs sub phone-overlay" aria-label={`${f.videoGroups[gi].label} styles`}>
+                {f.videoGroups[gi].videos.map((v, k) => (
+                  <button key={v.src} type="button" className={k === vi ? "active" : ""} onClick={() => setVi(k)} aria-current={k === vi}>
+                    {v.label}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          />
           <div className="shot-tabs" aria-label={`${f.name} brands`}>
             {f.videoGroups.map((g, k) => (
               <button key={g.label} type="button" className={k === gi ? "active" : ""} onClick={() => { setGi(k); setVi(0); }} aria-current={k === gi}>

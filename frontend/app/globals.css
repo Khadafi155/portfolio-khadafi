@@ -687,6 +687,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 /* second-level tabs (styles inside one brand): outlined instead of filled */
 .shot-tabs.sub button { font-size: 10.5px; padding: 4px 10px; }
 .shot-tabs.sub button.active { color: var(--accent); background: var(--accent-12); border-color: var(--accent-20); }
+/* style tabs floating inside the phone screen, just below the dynamic island */
+.shot-tabs.phone-overlay { position: absolute; top: 48px; left: 8px; right: 8px; z-index: 2; gap: 4px; }
+.shot-tabs.phone-overlay button { font-size: 9.5px; padding: 3px 8px; color: #fff; background: rgba(0,0,0,0.5); border-color: rgba(255,255,255,0.2); backdrop-filter: blur(8px); }
+.shot-tabs.phone-overlay button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
 /* one solid tosca circle (CTA colour) BEHIND the phone — the phone pokes out
    top & bottom and the circle peeks at the sides (like the reference).
    Lives on .phone-wrap so it sits truly behind the frame's dark bezel. */
