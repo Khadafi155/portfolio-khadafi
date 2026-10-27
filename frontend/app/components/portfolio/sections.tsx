@@ -349,18 +349,44 @@ function BrowserShell({ children, controls, url }: { children: React.ReactNode; 
 /** Project demo video with a seek bar below the mockup, rendered inside either a
  *  phone or a browser window. Plays once; when it ends the play/pause button
  *  becomes a restart button. */
+/** Sound choice shared by all demo videos: muting one keeps the next ones muted too. */
+const soundPref = { muted: false };
+
 function DemoMedia({ src, poster, variant, url }: { src: string; poster?: string; variant: "phone" | "browser"; url?: string }) {
   const ref = React.useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = React.useState(true);
+  const [playing, setPlaying] = React.useState(false);
   const [ended, setEnded] = React.useState(false);
-  // Autoplay must start muted (browser policy); the user unmutes with the button.
   const [muted, setMuted] = React.useState(true);
   const toggleMute = () => {
     const v = ref.current;
     if (!v) return;
     v.muted = !v.muted;
-    setMuted(v.muted);
+    soundPref.muted = v.muted;
   };
+  // Tuan 27 Okt: play WITH sound when on screen, pause when scrolled away. Browsers block sound
+  // until the first click/tap on the page, so we fall back to muted and turn sound on at that first gesture.
+  React.useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    let visible = false;
+    const start = () => {
+      v.muted = soundPref.muted;
+      v.play().catch(() => { v.muted = true; void v.play().catch(() => {}); });
+    };
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (visible) start(); else v.pause();
+    }, { threshold: 0.5 });
+    io.observe(v);
+    const onGesture = () => { if (visible && v.muted && !soundPref.muted) v.muted = false; };
+    document.addEventListener("pointerdown", onGesture);
+    document.addEventListener("keydown", onGesture);
+    return () => {
+      io.disconnect();
+      document.removeEventListener("pointerdown", onGesture);
+      document.removeEventListener("keydown", onGesture);
+    };
+  }, [src]);
   const [progress, setProgress] = React.useState(0); // 0..1
   const [time, setTime] = React.useState({ cur: 0, dur: 0 });
   const fmt = (s: number) =>
@@ -421,10 +447,9 @@ function DemoMedia({ src, poster, variant, url }: { src: string; poster?: string
       ref={ref}
       src={src}
       poster={poster}
-      autoPlay
-      muted
       playsInline
       preload="metadata"
+      onVolumeChange={() => setMuted(!!ref.current?.muted)}
       onPlay={() => { setPlaying(true); setEnded(false); }}
       onPause={() => setPlaying(false)}
       onEnded={() => setEnded(true)}
