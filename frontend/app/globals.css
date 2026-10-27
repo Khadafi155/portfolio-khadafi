@@ -637,7 +637,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 .media-head { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 4;
   display: flex; flex-direction: column; align-items: center; gap: 10px; width: max-content; max-width: calc(100% - 24px); }
 .media-head .media-toggle { position: static; transform: none; }
-.proj-feature-media.has-brands { padding-top: 104px; }
+/* Tuan 28 Okt: brand tabs a bit lower and bigger */
+.media-head > .shot-tabs { margin-top: 6px; gap: 6px; flex-wrap: nowrap; }
+.media-head > .shot-tabs button { font-size: 13px; padding: 7px 12px; gap: 6px; }
+.media-head > .shot-tabs button svg { width: 14px; height: 14px; }
+.proj-feature-media.has-brands { padding-top: 132px; }
 .media-toggle {
   position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
   z-index: 4; display: inline-flex; gap: 3px; padding: 3px;
@@ -1924,7 +1928,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
   /* stacked on mobile the toggle pill + mockup felt cramped top & bottom —
      give the phone real breathing room around the floating toggle */
   .proj-feature-media:has(.media-toggle) { padding-top: 78px; padding-bottom: 44px; }
-  .proj-feature-media.has-brands { padding-top: 140px; }
+  .proj-feature-media.has-brands { padding-top: 150px; }
   .proj-grid { grid-template-columns: 1fr 1fr; }
   .skill-groups { grid-template-columns: 1fr; }
   .contact-split { transform: none; }
@@ -2001,4 +2005,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
   .ci-emoji-pop,
   .fchat-foot .ci-emoji-pop { left: 8px; right: 8px; width: auto; max-width: none; }
   .brand-suffix { display: none; }
+}
+/* phones: brand tabs wrap to 2 rows instead of overflowing the media column */
+@media (max-width: 640px) {
+  .media-head > .shot-tabs { flex-wrap: wrap; }
+  .proj-feature-media.has-brands { padding-top: 186px; }
 }
