@@ -674,6 +674,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 .shot-dots button.active { background: var(--accent); width: 20px; }
 /* several CTA buttons side by side (wrap on narrow screens) */
 .proj-live-row { display: flex; flex-wrap: wrap; gap: 10px; }
+/* slightly tighter buttons so 3 CTAs fit one line on desktop (>=1200px); narrower still wraps */
+@media (min-width: 721px) {
+  .proj-live-row { gap: 8px; }
+  .proj-live-row .proj-live { padding: 10px 12px; gap: 7px; }
+}
 /* named tabs (e.g. behind-the-scenes per brand) */
 .shot-tabs { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
 .shot-tabs button {
