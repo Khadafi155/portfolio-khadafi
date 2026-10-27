@@ -672,6 +672,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 }
 .shot-dots button:hover { background: var(--accent-40, rgba(21,200,182,0.5)); }
 .shot-dots button.active { background: var(--accent); width: 20px; }
+/* several CTA buttons side by side (wrap on narrow screens) */
+.proj-live-row { display: flex; flex-wrap: wrap; gap: 10px; }
 /* named tabs (e.g. behind-the-scenes per brand) */
 .shot-tabs { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
 .shot-tabs button {

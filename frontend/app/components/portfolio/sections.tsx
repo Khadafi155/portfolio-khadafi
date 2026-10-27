@@ -677,7 +677,16 @@ export function ProjectsBlock() {
               {s}
             </li>
           ))}</ul>
-          {f.link ? (
+          {f.links?.length ? (
+            <div className="proj-live-row">
+              {f.links.map((l) => (
+                <a key={l.href} className="proj-live" href={l.href} target="_blank" rel="noreferrer">
+                  <ExternalLink size={15} />
+                  <span className="proj-live-label">{l.label}</span>
+                </a>
+              ))}
+            </div>
+          ) : f.link ? (
             <a className="proj-live" href={f.link} target="_blank" rel="noreferrer">
               <ExternalLink size={15} />
               <span className="proj-live-label">Visit project - {f.linkLabel}</span>

@@ -54,6 +54,8 @@ export interface FeatureProject {
   desktopImages?: string[];
   /** Tab name per desktop screenshot (replaces the gallery dots). */
   desktopLabels?: string[];
+  /** Several CTA buttons (replaces `link` when set). */
+  links?: { href: string; label: string }[];
   /** Several phone demo videos, picked with named tabs (`videoLabels`). */
   videos?: string[];
   videoLabels?: string[];
@@ -347,8 +349,11 @@ export const projects: FeatureProject[] = [
       `${ASSET}/SSV%20Demo.mp4`,
     ],
     videoLabels: ["Cinematic", "3D Pixar", "UGC Talking Head", "PawFence", "SSV"],
-    link: "https://willscale.agency/",
-    linkLabel: "willscale.agency",
+    links: [
+      { href: "https://veralouisiana.com/", label: "Vera's Copper" },
+      { href: "https://www.shoppawfence.com/", label: "PawFence" },
+      { href: "https://www.shinysmileveneers.com/", label: "Shiny Smile Veneers" },
+    ],
   },
   {
     name: "Tarkan Salar",
