@@ -70,6 +70,7 @@ const SLUG: Record<string, string> = {
   "Supabase Auth": "supabase",
   pgvector: "postgresql",
   "Git / GitHub": "github",
+  GitHub: "github",
 };
 
 /** Brand icons that aren't on simple-icons — mapped to a full icon URL.
@@ -188,6 +189,7 @@ const CUSTOM: Record<string, string> = {
   ElevenLabs: MIC,
   Magnific: IMAGE,
   "Freepik AI": IMAGE,
+  ByteDance: FILM,
   "AI & Automation": WORKFLOW,
   RAG: FILE_SEARCH,
   "Vector Search": SEARCH,
