@@ -406,8 +406,8 @@ export const projects: FeatureProject[] = [
     linkLabel: "dimplebindra.com",
   },
   {
-    name: "AIDA Office",
-    kicker: "Multi-agent virtual office built on Hermes Agent",
+    name: "AIDA Office — Multi-Agent Virtual Office",
+    kicker: "30+ AI agents running a 3D virtual office: Kanban workflow, approvals, Telegram and live chat.",
     funded: false,
     problem:
       "Running a one-person Upwork business means juggling job hunting, proposals, delivery, finance, and IT - and a pile of AI agents is hard to coordinate and impossible to see at a glance.",
@@ -415,7 +415,7 @@ export const projects: FeatureProject[] = [
       "A **virtual office of AI agents**: every staff member (CEO, PM, copywriting, finance, IT, QA, ...) is a **Hermes Agent** profile running 24/7 on **Claude (Opus / Sonnet / Haiku)**, coordinated through a shared **Kanban board** and **Telegram**. A Python **Hermes plugin** streams agent events to a **Bun + Elysia** server, which drives a realtime **3D villa** (**Next.js, React Three Fiber, VRM**) over **WebSocket** - each character walks, works, and joins meetings based on what her agent is actually doing. Includes chat & 1-on-1 meetings with any agent, **faster-whisper** voice notes, and a **Supabase pgvector** knowledge base.",
     outcome:
       "An always-on AI team where every agent's work is visible live, with the owner approving anything client-facing.",
-    stack: ["Hermes Agent", "Multi-Agent", "Claude API", "Python", "Bun", "Elysia", "TypeScript", "Next.js", "React", "React Three Fiber", "Three.js", "VRM", "WebSocket", "SQLite", "Supabase", "pgvector", "faster-whisper", "Telegram Bot API", "Notion", "Docker"],
+    stack: ["Hermes Agent", "Multi-Agent", "Claude API", "Python", "Bun", "Elysia", "TypeScript", "Next.js", "React", "React Three Fiber", "Three.js", "VRM", "WebSocket", "SQLite", "Supabase", "pgvector", "faster-whisper", "Telegram Bot API", "Notion API", "Google Workspace API", "Docker", "VPS"],
     metrics: [
       { n: "30+", l: "Hermes agent profiles" },
       { n: "24/7", l: "Always-on team" },
@@ -423,6 +423,9 @@ export const projects: FeatureProject[] = [
     ],
     slotId: "proj-aida-office",
     media: "AIDA Office 3D villa",
+    desktopImage: "/aida-office/villa-desktop.webp",
+    // TODO: add { href: <video url>, label: "Watch video" } once Tuan sends the recording
+    links: [{ href: "https://office.khadafiai.my.id", label: "Live demo (Visitor mode)" }],
   },
   {
     name: "Science Hunter Indonesia",
@@ -523,6 +526,7 @@ export const skills: SkillGroupData[] = [
       "Prompt Engineering & Caching",
       "Structured Output (JSON)", "Token Streaming (SSE)",
       "Claude (Chat, Code, Design, Cowork)",
+      "Multi-Agent Orchestration (Hermes Agent)", "Telegram Bot API", "Notion API", "Google Workspace API",
     ],
   },
   {
@@ -537,7 +541,7 @@ export const skills: SkillGroupData[] = [
     title: "Backend & APIs",
     gn: "// server-side",
     items: [
-      "FastAPI", "Uvicorn", "Node.js", "Elysia", "Express.js", "Bun", "Hapi",
+      "FastAPI", "Uvicorn", "Node.js", "Elysia", "WebSocket (Realtime)", "Express.js", "Bun", "Hapi",
       "Laravel", "Echo", "Gorm", "Drizzle ORM", "REST API", "Postman", "Async Programming",
       "Payment Gateway (Xendit, Stripe, Midtrans)",
       "Authentication & Authorization (JWT, Supabase Auth, RLS)", "Clean Architecture",
@@ -547,7 +551,7 @@ export const skills: SkillGroupData[] = [
     title: "Frontend",
     gn: "// the interface",
     items: [
-      "Next.js", "React", "Radix UI", "shadcn/ui", "Framer Motion", "Tailwind",
+      "Next.js", "React", "Three.js", "React Three Fiber", "Radix UI", "shadcn/ui", "Framer Motion", "Tailwind",
       "Vanilla JS", "HTML", "CSS", "Responsive Design", "DOM",
     ],
   },
