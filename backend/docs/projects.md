@@ -81,7 +81,15 @@ and ship to clients every week. Khadafi also writes and refines prompts for
 consistent, on-brand visuals, uses Claude and other LLMs to speed up scripting,
 asset sourcing, and batch production, and scouts and tests new generative AI
 tools (adopt or drop). Brands: veralouisiana.com (Vera's Copper),
-shoppawfence.com (PawFence), shinysmileveneers.com (Shiny Smile Veneers).
+shoppawfence.com (PawFence), shinysmileveneers.com (Shiny Smile Veneers). Demo videos are on the portfolio
+(khadafiai.my.id, Projects > WillScale Video Ads): Vera's Copper in 3 styles
+(3D Pixar, Movie Cinematic, UGC Talking Head), plus a PawFence demo and a Shiny
+Smile Veneers demo. Video links:
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Copper%203D%20Animation%20Style.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Copper%20Movie%20Cinematic%20Style.mp4.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Copper%20UGC%20Talking%20Head%20Style.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Pawfence%20Demo.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/SSV%20Demo.mp4
 
 ## AIDA Office — Multi-Agent Virtual Office
 AIDA Office is Khadafi's own multi-agent virtual office: 30+ AI agents running a
@@ -101,4 +109,5 @@ approving anything client-facing. Stack: Hermes Agent, Multi-Agent, Claude API,
 Python, Bun, Elysia, TypeScript, Next.js, React, React Three Fiber, Three.js,
 VRM, WebSocket, SQLite, Supabase, pgvector, faster-whisper, Telegram Bot API,
 Notion API, Google Workspace API, Docker, VPS. Live demo (Visitor mode):
-office.khadafiai.my.id.
+https://office.khadafiai.my.id. Demo video:
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/AIDA%20Office-demo.mp4
