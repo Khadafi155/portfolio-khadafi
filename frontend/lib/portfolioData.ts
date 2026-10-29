@@ -361,7 +361,7 @@ export const projects: FeatureProject[] = [
     problem:
       "Global DTC brands need 100+ fresh video ads every week across several styles - producing them by hand is slow, costly, and hard to keep on-brand.",
     approach:
-      "An **AI video ads automation system** built at **WillScale** for **Vera's Copper**, **Shiny Smile Veneers**, and **PawFence** - **Claude LLMs + MCP** orchestrate **Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI** and lip-sync tools to mass-produce videos, images, and voiceovers in 3 styles: **Movie Cinematic**, **3D Pixar Animation**, and **UGC Talking Head**.",
+      "An **AI video ads automation system** built at **WillScale** for **3 global DTC brands** - **Claude LLMs + MCP** orchestrate **Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI** and lip-sync tools to mass-produce videos, images, and voiceovers in 3 styles: **Movie Cinematic**, **3D Pixar Animation**, and **UGC Talking Head**.",
     outcome:
       "100+ finished short-form video ads that pass agency QA and ship to clients every week.",
     stack: ["Claude", "MCP", "Higgsfield", "HeyGen", "ByteDance", "ElevenLabs", "Suno Music AI", "Freepik AI", "GitHub", "Notion"],
@@ -373,23 +373,8 @@ export const projects: FeatureProject[] = [
     slotId: "proj-willscale",
     media: "WillScale video ads production",
     mediaUrl: "willscale-ad-pipelines",
-    // local webp copies of the bucket PNGs (bucket has no .webp twins for these, so webp() would 404)
-    desktopImages: ["/willscale/workflow-desktop.webp", "/willscale/copper-desktop.webp", "/willscale/pawfence-desktop.webp", "/willscale/ssv-desktop.webp"],
-    desktopLabels: ["Global Workflow", "Vera's Copper", "PawFence", "SSV"],
-    videoGroups: [
-      { label: "Vera's Copper", videos: [
-        { label: "3D Pixar", src: `${ASSET}/Copper%203D%20Animation%20Style.mp4` },
-        { label: "Movie Cinematic", src: `${ASSET}/Copper%20Movie%20Cinematic%20Style.mp4.mp4` },
-        { label: "UGC Talking Head", src: `${ASSET}/Copper%20UGC%20Talking%20Head%20Style.mp4` },
-      ] },
-      { label: "PawFence", videos: [{ label: "Demo", src: `${ASSET}/Pawfence%20Demo.mp4` }] },
-      { label: "Shiny Smile Veneers", videos: [{ label: "Demo", src: `${ASSET}/SSV%20Demo.mp4` }] },
-    ],
-    links: [
-      { href: "https://veralouisiana.com/", label: "Vera's Copper" },
-      { href: "https://www.shoppawfence.com/", label: "PawFence" },
-      { href: "https://www.shinysmileveneers.com/", label: "Shiny Smile Veneers" },
-    ],
+    // client brands, screenshots and demo videos are under NDA (Tuan, 29 Okt 2026): placeholder only
+    frame: "desktop",
   },
   {
     name: "Tarkan Salar",
@@ -609,10 +594,10 @@ export const experience: ExperienceItem[] = [
     company: "WillScale",
     loc: "Remote · Global",
     desc:
-      "WillScale is an AI video & image ads agency for global DTC brands (Vera's Copper, PawFence, Shiny Smile Veneers, and more).",
+      "WillScale is an AI video & image ads agency for global DTC brands.",
     logo: `${ASSET}/willscale%20logo.webp`,
     bullets: [
-      "Built and maintain an AI video ads automation system that mass-produces 100+ video ads, images, and voiceovers for 3 global brands (Vera's Copper, Shiny Smile Veneers, and PawFence) - powered by Claude LLMs and MCP, integrated with Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, lip-sync tools, GitHub, and Notion.",
+      "Built and maintain an AI video ads automation system that mass-produces 100+ video ads, images, and voiceovers for 3 global DTC brands - powered by Claude LLMs and MCP, integrated with Higgsfield, HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, lip-sync tools, GitHub, and Notion.",
       "Turn 100+ ad scripts into finished short-form video ads that pass agency QA and ship to clients every week - writing and refining prompts for consistent, on-brand visuals, and using Claude and other LLMs to speed up scripting, asset sourcing, and batch production.",
       "Scout and test new generative AI tools, then give a clear verdict: adopt or drop.",
     ],
