@@ -65,3 +65,40 @@ A platform for renting and booking villas. Users register as hosts or reservants
 post villas, make bookings, and process payments. Built with Golang, Echo, JWT
 Auth, Gorm, MySQL, SwaggerHub, the Xendit payment gateway, Google Cloud Platform
 (GCP), Docker, CI/CD, and Postman. Source: GitHub.
+
+## WillScale Video Ads — AI Video Ads Automation
+An AI video ads automation system Khadafi built at WillScale (AI Automation
+Engineer, Jul 2026 – now, remote · Jakarta). WillScale is an AI video & image ads
+agency for global DTC brands. The system serves 3 global brands: Vera's Copper,
+Shiny Smile Veneers, and PawFence. Claude LLMs + MCP orchestrate Higgsfield,
+HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, Suno Music AI, and lip-sync
+tools to mass-produce videos, images, and voiceovers in 3 styles: Movie
+Cinematic, 3D Pixar Animation, and UGC Talking Head. Integrated with GitHub and
+Notion. Problem solved: global DTC brands need 100+ fresh video ads every week
+across several styles, and producing them by hand is slow, costly, and hard to
+keep on-brand. Outcome: 100+ finished short-form video ads that pass agency QA
+and ship to clients every week. Khadafi also writes and refines prompts for
+consistent, on-brand visuals, uses Claude and other LLMs to speed up scripting,
+asset sourcing, and batch production, and scouts and tests new generative AI
+tools (adopt or drop). Brands: veralouisiana.com (Vera's Copper),
+shoppawfence.com (PawFence), shinysmileveneers.com (Shiny Smile Veneers).
+
+## AIDA Office — Multi-Agent Virtual Office
+AIDA Office is Khadafi's own multi-agent virtual office: 30+ AI agents running a
+3D virtual office with a Kanban workflow, approvals, Telegram, and live chat.
+Problem solved: running a one-person Upwork business means juggling job
+hunting, proposals, delivery, finance, and IT, and a pile of AI agents is hard
+to coordinate and impossible to see at a glance. Every staff member (CEO, PM,
+copywriting, finance, IT, QA, ...) is a Hermes Agent profile running 24/7 on
+Claude (Opus / Sonnet / Haiku), coordinated through a shared Kanban board and
+Telegram. A Python Hermes plugin streams agent events to a Bun + Elysia server,
+which drives a realtime 3D villa (Next.js, React Three Fiber, VRM) over
+WebSocket; each character walks, works, and joins meetings based on what her
+agent is actually doing. Includes chat and 1-on-1 meetings with any agent,
+faster-whisper voice notes, and a Supabase pgvector knowledge base. Outcome: an
+always-on AI team where every agent's work is visible live, with the owner
+approving anything client-facing. Stack: Hermes Agent, Multi-Agent, Claude API,
+Python, Bun, Elysia, TypeScript, Next.js, React, React Three Fiber, Three.js,
+VRM, WebSocket, SQLite, Supabase, pgvector, faster-whisper, Telegram Bot API,
+Notion API, Google Workspace API, Docker, VPS. Live demo (Visitor mode):
+office.khadafiai.my.id.
