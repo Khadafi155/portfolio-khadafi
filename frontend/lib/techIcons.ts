@@ -5,6 +5,13 @@
  * Only verified-existing slugs are listed (others 404 on the CDN).
  */
 const SLUG: Record<string, string> = {
+  Notion: "notion",
+  "Notion API": "notion",
+  "Three.js": "threedotjs",
+  "React Three Fiber": "threedotjs", // no R3F logo on simple-icons
+  SQLite: "sqlite",
+  "Telegram Bot API": "telegram",
+  "Google Workspace API": "google", // googleworkspace slug 404s
   "Claude Sonnet 4.6": "claude",
   "Claude API": "claude",
   Claude: "claude",
@@ -241,6 +248,19 @@ const CUSTOM: Record<string, string> = {
   OmniSocials: MEGAPHONE,
   Midtrans: CREDIT_CARD,
   ML: BRAIN,
+  "Hermes Agent": ROBOT,
+  "Multi-Agent": USERS,
+  "Multi-Agent Orchestration (Hermes Agent)": USERS,
+  "AI Automation": WORKFLOW,
+  B2C: STORE,
+  Fintech: CREDIT_CARD,
+  WAY4: CREDIT_CARD,
+  VPS: SERVER,
+  VRM: PACKAGE,
+  "Video Ads": FILM,
+  WebSocket: ACTIVITY,
+  "WebSocket (Realtime)": ACTIVITY,
+  "faster-whisper": MIC,
 };
 
 /** Labels whose logo must render as a full-colour image, NOT a monochrome mask
