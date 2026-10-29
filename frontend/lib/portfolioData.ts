@@ -532,7 +532,7 @@ export const skills: SkillGroupData[] = [
       "Prompt Engineering & Caching",
       "Structured Output (JSON)", "Token Streaming (SSE)",
       "Claude (Chat, Code, Design, Cowork)",
-      "Multi-Agent Orchestration (Hermes Agent)", "Telegram Bot API", "Notion API", "Google Workspace API",
+      "Multi-Agent Orchestration (Hermes Agent)",
     ],
   },
   {
@@ -548,7 +548,7 @@ export const skills: SkillGroupData[] = [
     gn: "// server-side",
     items: [
       "FastAPI", "Uvicorn", "Node.js", "Elysia", "WebSocket (Realtime)", "Express.js", "Bun", "Hapi",
-      "Laravel", "Echo", "Gorm", "Drizzle ORM", "REST API", "Postman", "Async Programming",
+      "Laravel", "Echo", "Gorm", "Drizzle ORM", "REST API", "Telegram Bot API", "Notion API", "Google Workspace API", "Postman", "Async Programming",
       "Payment Gateway (Xendit, Stripe, Midtrans)",
       "Authentication & Authorization (JWT, Supabase Auth, RLS)", "Clean Architecture",
     ],
