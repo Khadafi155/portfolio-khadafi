@@ -92,20 +92,25 @@ https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asse
 https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/SSV%20Demo.mp4
 
 ## AIDA Office — Multi-Agent Virtual Office
-AIDA Office is Khadafi's own multi-agent virtual office: 30+ AI agents running a
-3D virtual office with a Kanban workflow, approvals, Telegram, and live chat.
-Problem solved: running a one-person Upwork business means juggling job
-hunting, proposals, delivery, finance, and IT, and a pile of AI agents is hard
-to coordinate and impossible to see at a glance. Every staff member (CEO, PM,
-copywriting, finance, IT, QA, ...) is a Hermes Agent profile running 24/7 on
-Claude (Opus / Sonnet / Haiku), coordinated through a shared Kanban board and
-Telegram. A Python Hermes plugin streams agent events to a Bun + Elysia server,
-which drives a realtime 3D villa (Next.js, React Three Fiber, VRM) over
-WebSocket; each character walks, works, and joins meetings based on what her
-agent is actually doing. Includes chat and 1-on-1 meetings with any agent,
-faster-whisper voice notes, and a Supabase pgvector knowledge base. Outcome: an
-always-on AI team where every agent's work is visible live, with the owner
-approving anything client-facing. Stack: Hermes Agent, Multi-Agent, Claude API,
+AIDA Office is Khadafi's own multi-agent virtual office. It is made up of two
+companies run by one AI team (30+ AI agents) in one realtime 3D villa:
+(1) AIDA Upwork Office finds Upwork jobs, drafts proposals and delivers client
+work; (2) AIDA Capital Office researches and tests DeFi strategies in DRY RUN
+mode (no real funds). Problem solved: running a one-person business on two
+fronts - Upwork freelancing (job hunting, proposals, client delivery) and DeFi
+strategy research - means juggling everything alone, and a pile of AI agents
+is hard to coordinate and impossible to see at a glance. Every staff member
+(CEO, PM, copywriting, finance, IT, QA, ...) is a Hermes Agent profile running
+24/7 on Claude (Opus / Sonnet / Haiku), coordinated through a shared Kanban
+board and Telegram. A Python Hermes plugin streams agent events to a Bun +
+Elysia server, which drives a realtime 3D villa (Next.js, React Three Fiber,
+VRM) over WebSocket; each character walks, works, and joins meetings based on
+what her agent is actually doing. Includes chat and 1-on-1 meetings with any
+agent, faster-whisper voice notes, and a Supabase pgvector knowledge base.
+Outcome: an always-on AI team running both companies from one 3D villa: every
+agent's work is visible live, the owner approves anything client-facing, and
+Capital strategies stay in dry-run testing.
+Stack: Hermes Agent, Multi-Agent, Claude API,
 Python, Bun, Elysia, TypeScript, Next.js, React, React Three Fiber, Three.js,
 VRM, WebSocket, SQLite, Supabase, pgvector, faster-whisper, Telegram Bot API,
 Notion API, Google Workspace API, Docker, VPS. Live demo (Visitor mode):

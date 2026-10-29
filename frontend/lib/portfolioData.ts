@@ -199,14 +199,14 @@ export const projects: FeatureProject[] = [
   {
     name: "AIDA Office — Multi-Agent Virtual Office",
     category: "AI Agents",
-    kicker: "One AI team, two companies: AIDA Upwork Office and AIDA Capital Office, run by 30+ AI agents in one realtime 3D villa.",
+    kicker: "Two AI companies in one 3D villa: AIDA Upwork Office (Upwork jobs & client delivery) and AIDA Capital Office (DeFi strategy research, dry-run) - 30+ Hermes agents.",
     funded: false,
     problem:
-      "Running a one-person business on two fronts - Upwork freelancing (job hunting, proposals, client delivery) and DeFi strategy research - means juggling everything alone, and a pile of AI agents is hard to coordinate and impossible to see at a glance.",
+      "Running a one-person business on two fronts - winning and delivering Upwork client work, and researching DeFi strategies - means juggling job hunting, proposals, delivery, finance, IT and market research, and a pile of AI agents is hard to coordinate and impossible to see at a glance.",
     approach:
-      "**Two companies, one AI team**: **AIDA Upwork Office** finds Upwork jobs, drafts proposals and delivers client work, while **AIDA Capital Office** researches and tests DeFi strategies in **DRY RUN** mode (no real funds). Every staff member (CEO, PM, copywriting, finance, IT, QA, ...) is a **Hermes Agent** profile running 24/7 on **Claude (Opus / Sonnet / Haiku)**, coordinated through a shared **Kanban board** and **Telegram**. A Python **Hermes plugin** streams agent events to a **Bun + Elysia** server, which drives a realtime **3D villa** (**Next.js, React Three Fiber, VRM**) over **WebSocket** - each character walks, works, and joins meetings based on what her agent is actually doing. Includes chat & 1-on-1 meetings with any agent, **faster-whisper** voice notes, and a **Supabase pgvector** knowledge base.",
+      "AIDA Office is **two companies run by one AI team in one villa**: **AIDA Upwork Office** finds Upwork jobs, drafts proposals and delivers client projects, while **AIDA Capital Office** researches and tests DeFi strategies in **dry-run mode** (no live trading). A **virtual office of AI agents**: every staff member (CEO, PM, copywriting, finance, IT, QA, ...) is a **Hermes Agent** profile running 24/7 on **Claude (Opus / Sonnet / Haiku)**, coordinated through a shared **Kanban board** and **Telegram**. A Python **Hermes plugin** streams agent events to a **Bun + Elysia** server, which drives a realtime **3D villa** (**Next.js, React Three Fiber, VRM**) over **WebSocket** - each character walks, works, and joins meetings based on what her agent is actually doing. Includes chat & 1-on-1 meetings with any agent, **faster-whisper** voice notes, and a **Supabase pgvector** knowledge base.",
     outcome:
-      "An always-on AI team running both companies from one 3D villa: every agent's work is visible live, the owner approves anything client-facing, and Capital strategies stay in dry-run testing.",
+      "An always-on AI team running both companies, with every agent's work visible live and the owner approving anything client-facing.",
     stack: ["Hermes Agent", "Multi-Agent", "Claude API", "Python", "Bun", "Elysia", "TypeScript", "Next.js", "React", "React Three Fiber", "Three.js", "VRM", "WebSocket", "SQLite", "Supabase", "pgvector", "faster-whisper", "Telegram Bot API", "Notion API", "Google Workspace API", "Docker", "VPS"],
     metrics: [
       { n: "30+", l: "Hermes agent profiles" },
@@ -545,7 +545,7 @@ export const skills: SkillGroupData[] = [
       "Prompt Engineering & Caching",
       "Structured Output (JSON)", "Token Streaming (SSE)",
       "Claude (Chat, Code, Design, Cowork)",
-      "Multi-Agent Orchestration (Hermes Agent)", "Telegram Bot API", "Notion API", "Google Workspace API",
+      "Multi-Agent Orchestration (Hermes Agent)",
     ],
   },
   {
@@ -561,7 +561,7 @@ export const skills: SkillGroupData[] = [
     gn: "// server-side",
     items: [
       "FastAPI", "Uvicorn", "Node.js", "Elysia", "WebSocket (Realtime)", "Express.js", "Bun", "Hapi",
-      "Laravel", "Echo", "Gorm", "Drizzle ORM", "REST API", "Postman", "Async Programming",
+      "Laravel", "Echo", "Gorm", "Drizzle ORM", "REST API", "Telegram Bot API", "Notion API", "Google Workspace API", "Postman", "Async Programming",
       "Payment Gateway (Xendit, Stripe, Midtrans)",
       "Authentication & Authorization (JWT, Supabase Auth, RLS)", "Clean Architecture",
     ],
