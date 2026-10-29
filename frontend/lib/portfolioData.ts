@@ -29,7 +29,7 @@ export interface ProofStat {
 
 export interface FeatureProject {
   name: string;
-  category: "AI Agents" | "Automation" | "Websites" | "Apps";
+  category: "AI Agents" | "AI Automation" | "Website & CRM";
   kicker: string;
   funded: boolean;
   problem: string;
@@ -303,7 +303,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Marketing Engine",
-    category: "Automation",
+    category: "AI Automation",
     kicker: "n8n B2B outreach & lead-gen automation",
     funded: false,
     problem:
@@ -329,7 +329,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Content Engine",
-    category: "Automation",
+    category: "AI Automation",
     kicker: "n8n social-media video automation",
     funded: false,
     problem:
@@ -355,7 +355,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "WillScale Video Ads",
-    category: "Automation",
+    category: "AI Automation",
     kicker: "AI video ads automation for global DTC brands",
     funded: false,
     problem:
@@ -393,7 +393,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Tarkan Salar",
-    category: "Websites",
+    category: "Website & CRM",
     kicker: "DTC consultancy site + CRM + payments",
     funded: false,
     problem:
@@ -419,7 +419,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Dimple Bindra",
-    category: "Websites",
+    category: "Website & CRM",
     kicker: "Digital-product platform for women (US & HK)",
     funded: false,
     problem:
@@ -445,7 +445,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Science Hunter Indonesia",
-    category: "Websites",
+    category: "Website & CRM",
     kicker: "Indonesia's first scientific-education platform",
     funded: false,
     problem:
@@ -472,7 +472,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Smart Laundry",
-    category: "Apps",
+    category: "Website & CRM",
     kicker: "ML + cloud + mobile laundry platform",
     funded: false,
     problem:
@@ -510,7 +510,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Daishil",
-    category: "Apps",
+    category: "Website & CRM",
     kicker: "Villa rent & booking platform (Go)",
     funded: false,
     problem:

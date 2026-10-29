@@ -750,7 +750,7 @@ export function ProjectsBlock() {
       <SubHead id="projects" eyebrow="Projects" title="Shipped products, not slideware." index="01.6" icon={<FolderGit2 size={14} />} />
 
       <div className="shot-tabs proj-filter" role="group" aria-label="Filter projects by category">
-        {["All", "AI Agents", "Automation", "Websites", "Apps"].map((c) => (
+        {["All", ...new Set(PD.projects.map((p) => p.category))].map((c) => (
           <button key={c} type="button" className={c === cat ? "active" : ""} aria-pressed={c === cat} onClick={() => { setCat(c); setIdx(0); }}>
             {c}
           </button>
