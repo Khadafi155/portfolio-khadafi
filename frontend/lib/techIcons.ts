@@ -159,6 +159,11 @@ const MIC = lucide('<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3
 const CLOCK = lucide('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>');
 const KANBAN = lucide('<path d="M6 5v11"/><path d="M12 5v6"/><path d="M18 5v14"/>');
 const MESSAGE = lucide('<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>');
+const NETWORK = lucide('<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/>');
+const BOT_MESSAGE = lucide('<path d="M12 6V2H8"/><path d="M15 11v2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M20 16a2 2 0 0 1-2 2H8.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 4 20.286V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M9 11v2"/>');
+const PLUG_ZAP = lucide('<path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/>');
+const PERSON = lucide('<circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>');
+const LANDMARK = lucide('<path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/>');
 const USERS = lucide('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>');
 const FLAG = lucide('<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/>');
 const CHART_LINE = lucide('<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/>');
@@ -248,19 +253,19 @@ const CUSTOM: Record<string, string> = {
   OmniSocials: MEGAPHONE,
   Midtrans: CREDIT_CARD,
   ML: BRAIN,
-  "Hermes Agent": ROBOT,
-  "Multi-Agent": USERS,
-  "Multi-Agent Orchestration (Hermes Agent)": USERS,
-  "AI Automation": WORKFLOW,
-  B2C: STORE,
-  Fintech: CREDIT_CARD,
-  WAY4: CREDIT_CARD,
   VPS: SERVER,
-  VRM: PACKAGE,
+  "faster-whisper": OPENAI,
+  "AI Automation": WORKFLOW,
   "Video Ads": FILM,
-  WebSocket: ACTIVITY,
-  "WebSocket (Realtime)": ACTIVITY,
-  "faster-whisper": MIC,
+  WAY4: CREDIT_CARD,
+  B2C: STORE,
+  "Multi-Agent": NETWORK,
+  "Multi-Agent Orchestration (Hermes Agent)": NETWORK,
+  "Hermes Agent": BOT_MESSAGE,
+  WebSocket: PLUG_ZAP,
+  "WebSocket (Realtime)": PLUG_ZAP,
+  VRM: PERSON,
+  Fintech: LANDMARK,
 };
 
 /** Labels whose logo must render as a full-colour image, NOT a monochrome mask
