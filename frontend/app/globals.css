@@ -815,6 +815,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 
 /* MacBook laptop mockup (n8n & web-app demos) — landscape */
 .proj-feature:has(.proj-feature-media.is-desktop) { grid-template-columns: 1fr 1.42fr; }
+/* Tuan 29 Okt: data layout:"stacked" -> media full width on top, text below */
+.proj-feature.is-stacked,
+.proj-feature.is-stacked:has(.proj-feature-media.is-desktop) { grid-template-columns: 1fr; }
+.proj-feature.is-stacked .proj-feature-media { order: -1; border-left: none; border-bottom: 1px solid var(--line); }
+.proj-feature.is-stacked .macbook { width: min(100%, 960px); }
 .mac-wrap {
   position: relative; z-index: 1; width: 100%;
   display: flex; flex-direction: column; align-items: center; gap: 16px;

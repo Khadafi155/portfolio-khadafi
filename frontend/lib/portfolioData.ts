@@ -53,6 +53,8 @@ export interface FeatureProject {
   /** Multiple desktop screenshots — renders a gallery (prev/next + autoplay)
    *  inside the MacBook. Takes precedence over `desktopImage`. */
   desktopImages?: string[];
+  /** "stacked" = media full-width on top, text below (desktop too). Default: side-by-side. */
+  layout?: "stacked";
   /** Tab name per desktop screenshot (replaces the gallery dots). */
   desktopLabels?: string[];
   /** Several CTA buttons (replaces `link` when set). */
@@ -213,6 +215,7 @@ export const projects: FeatureProject[] = [
     ],
     slotId: "proj-aida-office",
     media: "AIDA Office 3D villa",
+    layout: "stacked",
     // 16:9 demo plays in the browser frame (no desktopImage, else it becomes a phone/desktop toggle)
     frame: "desktop",
     mediaUrl: "office.khadafiai.my.id",
