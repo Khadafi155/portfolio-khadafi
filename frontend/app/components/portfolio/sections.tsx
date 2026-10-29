@@ -739,7 +739,8 @@ function ProjectMedia({ f }: { f: PD.FeatureProject }) {
 }
 
 export function ProjectsBlock() {
-  const list = PD.projects;
+  const [cat, setCat] = React.useState<string>("All");
+  const list = cat === "All" ? PD.projects : PD.projects.filter((p) => p.category === cat);
   const total = list.length;
   const [idx, setIdx] = React.useState(0);
   const go = (n: number) => setIdx(((n % total) + total) % total);
@@ -748,7 +749,16 @@ export function ProjectsBlock() {
     <div className="sub-block">
       <SubHead id="projects" eyebrow="Projects" title="Shipped products, not slideware." index="01.6" icon={<FolderGit2 size={14} />} />
 
-      <div className="spot-card proj-feature" key={idx}>
+      <div className="shot-tabs proj-filter" role="group" aria-label="Filter projects by category">
+        {["All", "AI Agents", "Automation", "Websites", "Apps"].map((c) => (
+          <button key={c} type="button" className={c === cat ? "active" : ""} aria-pressed={c === cat} onClick={() => { setCat(c); setIdx(0); }}>
+            {c}
+          </button>
+        ))}
+      </div>
+
+      {/* key by project so media state (tabs/mode) resets when the filter swaps the card at the same idx */}
+      <div className="spot-card proj-feature" key={f.name}>
         <div className="proj-feature-body">
           {f.funded ? (
             <div className="proj-tag-row">

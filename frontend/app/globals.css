@@ -695,6 +695,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
   transition: color .2s, border-color .2s, background .2s;
 }
 .shot-tabs button:hover { color: var(--accent); border-color: var(--accent-20); }
+.shot-tabs.proj-filter { display: flex; justify-content: flex-start; margin: 0 0 16px; }
 .shot-tabs button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
 /* second-level tabs (styles inside one brand): outlined instead of filled */
 .shot-tabs.sub button { font-size: 10.5px; padding: 4px 10px; }
@@ -855,6 +856,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 /* desktop website screenshot — let the laptop screen size to the image so it
    fills edge-to-edge with NO crop and NO letterbox bars */
 .mac-content:has(img.shot-fill) { aspect-ratio: auto; }
+/* 16:9 demo video (AIDA) — match the video so cover doesn't crop the sides */
+.mac-content:has(video) { aspect-ratio: 16 / 9; }
 .mac-content img.shot.shot-fill { height: auto; object-fit: fill; background: transparent; }
 /* the aluminium base / keyboard deck front edge */
 .mac-base {

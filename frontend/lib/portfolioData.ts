@@ -29,6 +29,7 @@ export interface ProofStat {
 
 export interface FeatureProject {
   name: string;
+  category: "AI Agents" | "Automation" | "Websites" | "Apps";
   kicker: string;
   funded: boolean;
   problem: string;
@@ -194,7 +195,34 @@ export const proof: ProofStat[] = [
 
 export const projects: FeatureProject[] = [
   {
+    name: "AIDA Office — Multi-Agent Virtual Office",
+    category: "AI Agents",
+    kicker: "30+ AI agents running a 3D virtual office: Kanban workflow, approvals, Telegram and live chat.",
+    funded: false,
+    problem:
+      "Running a one-person Upwork business means juggling job hunting, proposals, delivery, finance, and IT - and a pile of AI agents is hard to coordinate and impossible to see at a glance.",
+    approach:
+      "A **virtual office of AI agents**: every staff member (CEO, PM, copywriting, finance, IT, QA, ...) is a **Hermes Agent** profile running 24/7 on **Claude (Opus / Sonnet / Haiku)**, coordinated through a shared **Kanban board** and **Telegram**. A Python **Hermes plugin** streams agent events to a **Bun + Elysia** server, which drives a realtime **3D villa** (**Next.js, React Three Fiber, VRM**) over **WebSocket** - each character walks, works, and joins meetings based on what her agent is actually doing. Includes chat & 1-on-1 meetings with any agent, **faster-whisper** voice notes, and a **Supabase pgvector** knowledge base.",
+    outcome:
+      "An always-on AI team where every agent's work is visible live, with the owner approving anything client-facing.",
+    stack: ["Hermes Agent", "Multi-Agent", "Claude API", "Python", "Bun", "Elysia", "TypeScript", "Next.js", "React", "React Three Fiber", "Three.js", "VRM", "WebSocket", "SQLite", "Supabase", "pgvector", "faster-whisper", "Telegram Bot API", "Notion API", "Google Workspace API", "Docker", "VPS"],
+    metrics: [
+      { n: "30+", l: "Hermes agent profiles" },
+      { n: "24/7", l: "Always-on team" },
+      { n: "3D", l: "Realtime villa" },
+    ],
+    slotId: "proj-aida-office",
+    media: "AIDA Office 3D villa",
+    // 16:9 demo plays in the browser frame (no desktopImage, else it becomes a phone/desktop toggle)
+    frame: "desktop",
+    mediaUrl: "office.khadafiai.my.id",
+    video: `${ASSET}/AIDA%20Office-demo.mp4?v=2`,
+    poster: `${ASSET}/AIDA%20Office-demo-poster.jpg`,
+    links: [{ href: "https://office.khadafiai.my.id", label: "Open AIDA Office" }],
+  },
+  {
     name: "80/20 Engine",
+    category: "AI Agents",
     kicker: "Business-diagnostic AI agent for DTC brands ($3M-$50M)",
     funded: false,
     problem:
@@ -220,6 +248,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Copy Engine",
+    category: "AI Agents",
     kicker: "RAG copywriting AI agent, grounded in expert knowledge",
     funded: false,
     problem:
@@ -245,6 +274,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "HOOR",
+    category: "AI Agents",
     kicker: "Microsoft-funded, privacy-first AI agent",
     funded: true,
     problem:
@@ -270,6 +300,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Marketing Engine",
+    category: "Automation",
     kicker: "n8n B2B outreach & lead-gen automation",
     funded: false,
     problem:
@@ -295,6 +326,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Content Engine",
+    category: "Automation",
     kicker: "n8n social-media video automation",
     funded: false,
     problem:
@@ -320,6 +352,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "WillScale Video Ads",
+    category: "Automation",
     kicker: "AI video ads automation for global DTC brands",
     funded: false,
     problem:
@@ -357,6 +390,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Tarkan Salar",
+    category: "Websites",
     kicker: "DTC consultancy site + CRM + payments",
     funded: false,
     problem:
@@ -382,6 +416,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Dimple Bindra",
+    category: "Websites",
     kicker: "Digital-product platform for women (US & HK)",
     funded: false,
     problem:
@@ -406,35 +441,8 @@ export const projects: FeatureProject[] = [
     linkLabel: "dimplebindra.com",
   },
   {
-    name: "AIDA Office — Multi-Agent Virtual Office",
-    kicker: "30+ AI agents running a 3D virtual office: Kanban workflow, approvals, Telegram and live chat.",
-    funded: false,
-    problem:
-      "Running a one-person Upwork business means juggling job hunting, proposals, delivery, finance, and IT - and a pile of AI agents is hard to coordinate and impossible to see at a glance.",
-    approach:
-      "A **virtual office of AI agents**: every staff member (CEO, PM, copywriting, finance, IT, QA, ...) is a **Hermes Agent** profile running 24/7 on **Claude (Opus / Sonnet / Haiku)**, coordinated through a shared **Kanban board** and **Telegram**. A Python **Hermes plugin** streams agent events to a **Bun + Elysia** server, which drives a realtime **3D villa** (**Next.js, React Three Fiber, VRM**) over **WebSocket** - each character walks, works, and joins meetings based on what her agent is actually doing. Includes chat & 1-on-1 meetings with any agent, **faster-whisper** voice notes, and a **Supabase pgvector** knowledge base.",
-    outcome:
-      "An always-on AI team where every agent's work is visible live, with the owner approving anything client-facing.",
-    stack: ["Hermes Agent", "Multi-Agent", "Claude API", "Python", "Bun", "Elysia", "TypeScript", "Next.js", "React", "React Three Fiber", "Three.js", "VRM", "WebSocket", "SQLite", "Supabase", "pgvector", "faster-whisper", "Telegram Bot API", "Notion API", "Google Workspace API", "Docker", "VPS"],
-    metrics: [
-      { n: "30+", l: "Hermes agent profiles" },
-      { n: "24/7", l: "Always-on team" },
-      { n: "3D", l: "Realtime villa" },
-    ],
-    slotId: "proj-aida-office",
-    media: "AIDA Office 3D villa",
-    // 16:9 demo plays in the browser frame (no desktopImage, else it becomes a phone/desktop toggle)
-    frame: "desktop",
-    mediaUrl: "office.khadafiai.my.id",
-    video: `${ASSET}/AIDA%20Office-demo.mp4`,
-    poster: `${ASSET}/AIDA%20Office-demo-poster.jpg`,
-    links: [
-      { href: "https://office.khadafiai.my.id", label: "Live demo (Visitor mode)" },
-      { href: `${ASSET}/AIDA%20Office-demo.mp4`, label: "Watch video" },
-    ],
-  },
-  {
     name: "Science Hunter Indonesia",
+    category: "Websites",
     kicker: "Indonesia's first scientific-education platform",
     funded: false,
     problem:
@@ -461,6 +469,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Smart Laundry",
+    category: "Apps",
     kicker: "ML + cloud + mobile laundry platform",
     funded: false,
     problem:
@@ -498,6 +507,7 @@ export const projects: FeatureProject[] = [
   },
   {
     name: "Daishil",
+    category: "Apps",
     kicker: "Villa rent & booking platform (Go)",
     funded: false,
     problem:
