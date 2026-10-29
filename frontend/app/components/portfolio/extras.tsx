@@ -481,7 +481,8 @@ export function AwardsBlock() {
       <WheelPagination
         className="awards-nav"
         totalPages={sortedCards.length}
-        visibleCount={7}
+        /* max 5 numbers so the arrows fit on 360px phones (7 overflowed) */
+        visibleCount={Math.min(sortedCards.length, 5)}
         loop
         page={page}
         onChange={(i) => {
