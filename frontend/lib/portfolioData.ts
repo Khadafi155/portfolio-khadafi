@@ -607,7 +607,7 @@ export const experience: ExperienceItem[] = [
     when: "Jul 2026 - Now",
     role: "AI Automation Engineer",
     company: "WillScale",
-    loc: "Remote · Jakarta",
+    loc: "Remote · Global",
     desc:
       "WillScale is an AI video & image ads agency for global DTC brands (Vera's Copper, PawFence, Shiny Smile Veneers, and more).",
     logo: `${ASSET}/willscale%20logo.webp`,
