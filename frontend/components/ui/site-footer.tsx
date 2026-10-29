@@ -40,8 +40,8 @@ export function SiteFooter() {
     { label: "Email", caption: "Email", href: `mailto:${profile.email}`, Icon: Mail, ext: false },
     { label: "WhatsApp", caption: "WhatsApp", href: `https://wa.me/${wa}`, Icon: WhatsAppIcon, ext: true },
     { label: "LinkedIn", caption: "LinkedIn", href: profile.linkedinUrl, Icon: LinkedInIcon, ext: true },
-    { label: "GitHub — Khadafi15", caption: "GitHub 1st", href: "https://github.com/Khadafi15", Icon: GithubIcon, ext: true },
-    { label: "GitHub — Khadafi155", caption: "GitHub 2nd", href: "https://github.com/Khadafi155", Icon: GithubIcon, ext: true },
+    { label: "GitHub - Khadafi15", caption: "GitHub 1st", href: "https://github.com/Khadafi15", Icon: GithubIcon, ext: true },
+    { label: "GitHub - Khadafi155", caption: "GitHub 2nd", href: "https://github.com/Khadafi155", Icon: GithubIcon, ext: true },
     { label: "n8n workflows", caption: "n8n", href: N8N_URL, Icon: Workflow, ext: true },
   ];
 

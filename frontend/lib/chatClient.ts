@@ -209,7 +209,7 @@ export async function streamChat(
 
     if (response.status === 429) {
       throw new Error(
-        "Whoa, too many messages in a short time — please wait a moment and try again. 🙏",
+        "Whoa, too many messages in a short time - please wait a moment and try again. 🙏",
       );
     }
     if (!response.ok || !response.body) {

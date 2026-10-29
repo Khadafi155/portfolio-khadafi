@@ -197,7 +197,7 @@ export const proof: ProofStat[] = [
 
 export const projects: FeatureProject[] = [
   {
-    name: "AIDA Office — Multi-Agent Virtual Office",
+    name: "AIDA Office - Multi-Agent Virtual Office",
     category: "AI Agents",
     kicker: "Two AI companies in one 3D villa: AIDA Upwork Office (Upwork jobs & client delivery) and AIDA Capital Office (7 DeFi bots on Solana, BNB Chain & Robinhood Chain) - 30+ Hermes agents.",
     funded: false,
