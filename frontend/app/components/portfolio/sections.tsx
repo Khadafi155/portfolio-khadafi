@@ -17,7 +17,7 @@ import {
   ImageSlot,
   TagIcon,
 } from "@/app/components/portfolio/primitives";
-import { Bot, Briefcase, FolderGit2, Mic, Smile, Users, BookOpen, Play, Pause, RotateCcw, ExternalLink, Monitor, Smartphone, ChevronLeft, ChevronRight, Volume2, VolumeX, Workflow, Clapperboard, Box } from "lucide-react";
+import { Bot, Briefcase, FolderGit2, Mic, Smile, Users, BookOpen, Play, Pause, RotateCcw, ExternalLink, Monitor, Smartphone, ChevronLeft, ChevronRight, Volume2, VolumeX, Workflow, Gem, Dog, Clapperboard, Box } from "lucide-react";
 import { AwardsBlock } from "@/app/components/portfolio/extras";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { SiteFooter, WhatsAppIcon } from "@/components/ui/site-footer";
@@ -352,7 +352,7 @@ function BrowserShell({ children, controls, url }: { children: React.ReactNode; 
  *  becomes a restart button. */
 /** Icon per gallery / video tab label (labels without one render text only). */
 const TAB_ICON: Record<string, React.ComponentType<{ size?: number }>> = {
-  "Global Workflow": Workflow,
+  "Global Workflow": Workflow, "Vera's Copper": Gem, PawFence: Dog, SSV: Smile, "Shiny Smile Veneers": Smile,
   "Movie Cinematic": Clapperboard, "3D Pixar": Box, "UGC Talking Head": Mic, Demo: Play,
 };
 function TabLabel({ text }: { text?: string }) {

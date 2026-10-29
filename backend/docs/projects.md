@@ -69,8 +69,8 @@ Auth, Gorm, MySQL, SwaggerHub, the Xendit payment gateway, Google Cloud Platform
 ## WillScale Video Ads — AI Video Ads Automation
 An AI video ads automation system Khadafi built at WillScale (AI Automation
 Engineer, Jul 2026 – now, remote · Global). WillScale is an AI video & image ads
-agency for global DTC brands. The system serves 3 global DTC brands (names are
-under NDA and cannot be shared). Claude LLMs + MCP orchestrate Higgsfield,
+agency for global DTC brands. The system serves 3 global brands: Vera's Copper,
+Shiny Smile Veneers, and PawFence. Claude LLMs + MCP orchestrate Higgsfield,
 HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, Suno Music AI, and lip-sync
 tools to mass-produce videos, images, and voiceovers in 3 styles: Movie
 Cinematic, 3D Pixar Animation, and UGC Talking Head. Integrated with GitHub and
@@ -80,8 +80,16 @@ keep on-brand. Outcome: 100+ finished short-form video ads that pass agency QA
 and ship to clients every week. Khadafi also writes and refines prompts for
 consistent, on-brand visuals, uses Claude and other LLMs to speed up scripting,
 asset sourcing, and batch production, and scouts and tests new generative AI
-tools (adopt or drop). Client brand names, screenshots and demo videos are under
-NDA, so they are not shown publicly or shared in chat.
+tools (adopt or drop). Brands: veralouisiana.com (Vera's Copper),
+shoppawfence.com (PawFence), shinysmileveneers.com (Shiny Smile Veneers). Demo videos are on the portfolio
+(khadafiai.my.id, Projects > WillScale Video Ads): Vera's Copper in 3 styles
+(3D Pixar, Movie Cinematic, UGC Talking Head), plus a PawFence demo and a Shiny
+Smile Veneers demo. Video links:
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Copper%203D%20Animation%20Style.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Copper%20Movie%20Cinematic%20Style.mp4.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Copper%20UGC%20Talking%20Head%20Style.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Pawfence%20Demo.mp4
+https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/SSV%20Demo.mp4
 
 ## AIDA Office — Multi-Agent Virtual Office
 AIDA Office is Khadafi's own multi-agent virtual office: two AI companies in
