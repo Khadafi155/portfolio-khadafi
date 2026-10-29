@@ -162,7 +162,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {
-  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  background: var(--bg); /* solid: 92% still let text ghost through behind the header */
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line);
@@ -633,6 +633,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 /* Desktop / Phone view switcher (projects with both a video + desktop shot).
    Push the mockup down so the floating pill never covers the screen top. */
 .proj-feature-media:has(.media-toggle) { padding-top: 60px; padding-bottom: 20px; }
+/* tall text column (AIDA) left the MacBook floating mid-column; pin it to the top */
+.proj-feature-media:has(.mac-wrap) { align-items: start; }
 /* toggle + brand tabs stacked at the top of the media column */
 .media-head { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 4;
   display: flex; flex-direction: column; align-items: center; gap: 10px; width: max-content; max-width: calc(100% - 24px); }

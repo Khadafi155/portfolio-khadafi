@@ -94,6 +94,10 @@ https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asse
 ## AIDA Office — Multi-Agent Virtual Office
 AIDA Office is Khadafi's own multi-agent virtual office: 30+ AI agents running a
 3D virtual office with a Kanban workflow, approvals, Telegram, and live chat.
+AIDA Office is two companies run by one AI team in one villa: AIDA Upwork Office
+finds Upwork jobs, drafts proposals and delivers client projects, while AIDA
+Capital Office researches and tests DeFi strategies in dry-run mode (no live
+trading).
 Problem solved: running a one-person Upwork business means juggling job
 hunting, proposals, delivery, finance, and IT, and a pile of AI agents is hard
 to coordinate and impossible to see at a glance. Every staff member (CEO, PM,
