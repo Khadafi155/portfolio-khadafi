@@ -758,7 +758,7 @@ export function ProjectsBlock() {
       </div>
 
       {/* key by project so media state (tabs/mode) resets when the filter swaps the card at the same idx */}
-      <div className="spot-card proj-feature" key={f.name}>
+      <div className={`spot-card proj-feature${f.layout === "stacked" ? " is-stacked" : ""}`} key={f.name}>
         <div className="proj-feature-body">
           {f.funded ? (
             <div className="proj-tag-row">
