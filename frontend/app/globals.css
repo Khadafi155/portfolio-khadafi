@@ -162,7 +162,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; }
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  background: var(--bg); /* solid: 92% still let text ghost through behind the header */
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line);
