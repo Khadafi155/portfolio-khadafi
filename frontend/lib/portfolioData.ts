@@ -423,9 +423,15 @@ export const projects: FeatureProject[] = [
     ],
     slotId: "proj-aida-office",
     media: "AIDA Office 3D villa",
-    desktopImage: "/aida-office/villa-desktop.webp",
-    // TODO: add { href: <video url>, label: "Watch video" } once Tuan sends the recording
-    links: [{ href: "https://office.khadafiai.my.id", label: "Live demo (Visitor mode)" }],
+    // 16:9 demo plays in the browser frame (no desktopImage, else it becomes a phone/desktop toggle)
+    frame: "desktop",
+    mediaUrl: "office.khadafiai.my.id",
+    video: `${ASSET}/AIDA%20Office-demo.mp4`,
+    poster: `${ASSET}/AIDA%20Office-demo-poster.jpg`,
+    links: [
+      { href: "https://office.khadafiai.my.id", label: "Live demo (Visitor mode)" },
+      { href: `${ASSET}/AIDA%20Office-demo.mp4`, label: "Watch video" },
+    ],
   },
   {
     name: "Science Hunter Indonesia",
