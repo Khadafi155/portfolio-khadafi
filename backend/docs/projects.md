@@ -68,7 +68,7 @@ Auth, Gorm, MySQL, SwaggerHub, the Xendit payment gateway, Google Cloud Platform
 
 ## WillScale Video Ads — AI Video Ads Automation
 An AI video ads automation system Khadafi built at WillScale (AI Automation
-Engineer, Jul 2026 – now, remote · Jakarta). WillScale is an AI video & image ads
+Engineer, Jul 2026 – now, remote · Global). WillScale is an AI video & image ads
 agency for global DTC brands. The system serves 3 global brands: Vera's Copper,
 Shiny Smile Veneers, and PawFence. Claude LLMs + MCP orchestrate Higgsfield,
 HeyGen, Magnific, ByteDance, ElevenLabs, Freepik AI, Suno Music AI, and lip-sync
