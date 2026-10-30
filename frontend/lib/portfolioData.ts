@@ -323,7 +323,7 @@ export const projects: FeatureProject[] = [
     frame: "desktop",
     mediaUrl: "n8n · marketing-engine",
     image:
-      "https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Marketing%20Engine.png",
+      "https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Marketing%20Engine.webp",
     link: "https://drive.google.com/drive/folders/1NdQcstibn586Q-V2f6P93ITEQw7BadJQ",
     linkLabel: "Google Drive",
   },
@@ -349,7 +349,7 @@ export const projects: FeatureProject[] = [
     frame: "desktop",
     mediaUrl: "n8n · content-engine",
     image:
-      "https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Content%20Engine.png",
+      "https://fenaqrrsfbmgzjiirzsz.supabase.co/storage/v1/object/public/website%20asset/Content%20Engine.webp",
     link: "https://drive.google.com/drive/folders/1NdQcstibn586Q-V2f6P93ITEQw7BadJQ",
     linkLabel: "Google Drive",
   },
